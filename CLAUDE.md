@@ -50,6 +50,8 @@ src/
                           Screenshot, Feature, Hero, WidgetShowcase, SiriShowcase,
                           PrivacyBand, AppStoreCta, LegalPage
   lib/content/faq.ts      FAQ: feeds the Support page and its FAQPage JSON-LD
+  lib/learning/learningDay.ts   port of the app's LearningDay.swift ("How it learns" script, curve, Beat)
+  lib/learning/phase.ts   the six day phases (ToneProfile.swift); marks take the visitor's hour colour
   routes/                 / · /support · /privacy · /terms · +error (404)
 scripts/
   verify-lib.js (+ .test.js), verify.js   the copy and origin checks
@@ -65,6 +67,13 @@ static/images/widgets/    {medium,small,running}-{light,dark}.webp (2x, rounded)
 - **Wordmark:** `swift scripts/export-wordmark.swift > src/lib/assets/wordmark-path.ts`.
 - **Icons:** favicons and OG image come from `~/Code/ios/Meontor/docs/design/app-icon/app-icon-1024.png` (commands in the plan, Task 2).
 - **Screenshots:** build the app for the booted simulator, then `scripts/shots.sh <now|timeline|mentor|search> <light|dark>`. Load data once with `-sampleLife` (it ignores `-screen`). Widgets: `-widgets medium|small`, cropped at 3x bounds with a 66px corner. The DEBUG-only magenta diagnostic line on the Mentor card is painted out, since release builds never show it.
+
+## How it learns and the hour colour
+
+- `HowItLearns.svelte` conducts the app's onboarding centrepiece; `LearningDial.svelte` only draws it. Data and timings are a port of `MeontorCore/Onboarding/LearningDay.swift`, whose `LearningDayRankerTests` hold the tiles to the real ranker: **change the Swift first, then mirror it here** (`learningDay.test.ts` mirrors its maths).
+- Reduced motion, no JS and screen readers get the still card (the four moments), as the app does under Reduce Motion or VoiceOver.
+- Every mark sits in a `.mark-tint` wrapper; the layout sets `data-phase` on `<html>` from the visitor's hour, and `--phase-*` in `app.css` are Apple's system colours. Without JS the mark stays the midday blue.
+- The Mentor screenshot is from the owner's iPhone (Apple Intelligence, 2026-09-26), dark only, used for both schemes, with the simulator's 9:41 status bar laid over it.
 
 ## At launch
 

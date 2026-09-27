@@ -15,7 +15,7 @@
 
 <section class="overflow-hidden px-5 pt-16 pb-10 sm:pt-24">
 	<div class="mx-auto flex max-w-3xl flex-col items-center text-center">
-		<span class="text-accent"><Mark size={104} breathing label="Meontor" /></span>
+		<span class="mark-tint"><Mark size={104} breathing /></span>
 		<Wordmark class="mt-6 h-11 text-label sm:h-14" />
 		<p class="mt-3 text-xl text-label-2 sm:text-2xl">Moment + Mentor.</p>
 		<h1 class="mt-10 text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
