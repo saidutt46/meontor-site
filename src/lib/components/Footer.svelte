@@ -11,6 +11,7 @@
 	import { COMPANY, SUPPORT_EMAIL } from '$lib/constants/app';
 
 	const links = [
+		{ href: '/#features', label: 'Features' },
 		{ href: '/support', label: 'Support' },
 		{ href: '/privacy', label: 'Privacy' },
 		{ href: '/terms', label: 'Terms' },
@@ -23,7 +24,7 @@
 		<div class="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
 			<div>
 				<a href="/" class="flex items-center gap-2 text-label">
-					<span class="text-accent"><Mark size={28} /></span>
+					<span class="mark-tint"><Mark size={28} /></span>
 					<Wordmark class="h-5" />
 				</a>
 				<p class="mt-3 text-sm text-label-2">Moment + Mentor.</p>

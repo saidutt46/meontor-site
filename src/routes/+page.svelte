@@ -12,6 +12,7 @@
 	import PhoneFrame from '$lib/components/PhoneFrame.svelte';
 	import Screenshot from '$lib/components/Screenshot.svelte';
 	import WidgetShowcase from '$lib/components/WidgetShowcase.svelte';
+	import HowItLearns from '$lib/components/HowItLearns.svelte';
 	import SiriShowcase from '$lib/components/SiriShowcase.svelte';
 	import PrivacyBand from '$lib/components/PrivacyBand.svelte';
 	import AppStoreCta from '$lib/components/AppStoreCta.svelte';
@@ -70,6 +71,8 @@
 
 	<WidgetShowcase />
 
+	<HowItLearns />
+
 	<Feature eyebrow="Everything else" title="Anything else is one search away." flip>
 		<p>
 			Over a hundred activities across everyday life, in categories you can reorder and make your
@@ -99,7 +102,7 @@
 			<PhoneFrame>
 				<Screenshot
 					name="mentor"
-					alt="The Mentor's reflection: a day of connection, care for yourself, rest and keeping home"
+					alt="The Mentor, written by Apple Intelligence: a day with room for the people you love, for yourself, and for work that moves forward"
 				/>
 			</PhoneFrame>
 		{/snippet}
@@ -148,7 +151,7 @@
 
 <section class="px-5 py-24 sm:py-32">
 	<div class="fade-in flex flex-col items-center text-center" use:reveal>
-		<span class="text-accent"><Mark size={64} /></span>
+		<span class="mark-tint"><Mark size={64} /></span>
 		<h2 class="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">Start with one tap.</h2>
 		<div class="mt-8"><AppStoreCta /></div>
 	</div>

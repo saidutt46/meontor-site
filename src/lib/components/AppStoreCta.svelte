@@ -17,8 +17,7 @@
 		>Download on the App Store</a
 	>
 {:else}
-	<span
-		class="inline-flex h-12 items-center rounded-full bg-label px-7 font-medium text-canvas"
-		aria-disabled="true">Coming soon to the App Store</span
+	<span class="inline-flex h-12 items-center rounded-full bg-label px-7 font-medium text-canvas"
+		>Coming soon to the App Store</span
 	>
 {/if}
