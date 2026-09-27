@@ -6,20 +6,16 @@
   Proprietary and confidential.
 -->
 <script lang="ts">
+	import { page } from '$app/state';
 	import SeoHead from '$lib/components/SeoHead.svelte';
-	import Mark from '$lib/components/Mark.svelte';
+	import ErrorMessage from '$lib/components/ErrorMessage.svelte';
 </script>
 
 <SeoHead
-	title="Not found · Meontor"
-	description="This page isn't here. Go back to Meontor."
-	path="/404"
+	title={page.status === 404 ? 'Not found · Meontor' : 'Something went wrong · Meontor'}
+	description="Go back to Meontor."
+	path={page.url.pathname}
 	noindex
 />
 
-<section class="flex min-h-[70vh] flex-col items-center justify-center px-5 text-center">
-	<span class="text-accent"><Mark size={96} breathing /></span>
-	<h1 class="mt-8 text-3xl font-semibold tracking-tight sm:text-4xl">This page isn't here.</h1>
-	<p class="mt-3 text-lg text-label-2">It may have moved, or the link may be mistyped.</p>
-	<a href="/" class="mt-8 font-medium text-accent hover:underline">Back to Meontor</a>
-</section>
+<ErrorMessage status={page.status} />

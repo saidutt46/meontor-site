@@ -46,7 +46,9 @@
 	{#if APP_STORE_URL}
 		<meta name="apple-itunes-app" content={`app-argument=${APP_STORE_URL}`} />
 	{/if}
-	<link rel="canonical" href={canonicalUrl} />
+	{#if !noindex}
+		<link rel="canonical" href={canonicalUrl} />
+	{/if}
 
 	<meta property="og:site_name" content={SITE_NAME} />
 	<meta property="og:locale" content="en_US" />
