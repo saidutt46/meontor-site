@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://meontor.com/sitemap.xml

@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans:
+		-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', system-ui, 'Helvetica Neue',
+		Arial, sans-serif;
+	--color-canvas: var(--canvas);
+	--color-grouped: var(--grouped);
+	--color-label: var(--label);
+	--color-label-2: var(--label-2);
+	--color-label-3: var(--label-3);
+	--color-separator: var(--separator);
+	--color-accent: var(--accent);
+}
+
+:root {
+	/* Apple's label greys, with the tertiary darkened to pass 4.5:1 on canvas and grouped. */
+	--canvas: #ffffff;
+	--grouped: #f2f2f7;
+	--label: #000000;
+	--label-2: rgb(60 60 67 / 0.82);
+	--label-3: rgb(60 60 67 / 0.75);
+	--separator: rgb(60 60 67 / 0.18);
+	--accent: #4f63d9;
+	--mark-core: #ffffff;
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--canvas: #000000;
+		--grouped: #1c1c1e;
+		--label: #ffffff;
+		--label-2: rgb(235 235 245 / 0.7);
+		--label-3: rgb(235 235 245 / 0.58);
+		--separator: rgb(84 84 88 / 0.6);
+		--accent: #7d94f0;
+		--mark-core: #000000;
+	}
+}
+
+html {
+	background: var(--canvas);
+	color: var(--label);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Visible by default: the reveal action arms a section (hides it) only once its
+   script is running, so a bundle that fails to load never hides content. */
+.fade-in {
+	transition:
+		opacity 0.8s ease,
+		transform 0.8s ease;
+}
+.fade-in.armed:not(.visible) {
+	opacity: 0;
+	transform: translateY(16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.fade-in,
+	.fade-in.armed:not(.visible) {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+	}
+}
