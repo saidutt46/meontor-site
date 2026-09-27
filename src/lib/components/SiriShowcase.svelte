@@ -32,7 +32,9 @@
 					<p class="text-lg font-medium">"Log coffee in Meontor"</p>
 				</div>
 			</div>
-			<figcaption><strong>Siri</strong> Say what you did, and it is logged.</figcaption>
+			<figcaption>
+				<strong>Siri</strong> Say &ldquo;Log coffee in Meontor&rdquo;, and it&rsquo;s logged.
+			</figcaption>
 		</figure>
 		<figure class="card">
 			<div class="stage">

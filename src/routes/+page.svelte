@@ -13,6 +13,7 @@
 	import Screenshot from '$lib/components/Screenshot.svelte';
 	import WidgetShowcase from '$lib/components/WidgetShowcase.svelte';
 	import HowItLearns from '$lib/components/HowItLearns.svelte';
+	import PatternsShowcase from '$lib/components/PatternsShowcase.svelte';
 	import SiriShowcase from '$lib/components/SiriShowcase.svelte';
 	import PrivacyBand from '$lib/components/PrivacyBand.svelte';
 	import AppStoreCta from '$lib/components/AppStoreCta.svelte';
@@ -91,8 +92,8 @@
 
 	<Feature id="mentor" eyebrow="Mentor" title="What your day gave you.">
 		<p>
-			Open the Mentor and it reflects on your day: what kind of day it was, a line for each of your
-			roles, one thing worth noticing.
+			Open the Mentor and your day is drawn on a single line, from your first entry to now. Then it
+			reflects: what kind of day it was, and something noticed about each of your roles.
 		</p>
 		<p>
 			It's written by Apple Intelligence on your iPhone, or written on device when Apple
@@ -102,11 +103,13 @@
 			<PhoneFrame>
 				<Screenshot
 					name="mentor"
-					alt="The Mentor, written by Apple Intelligence: a day with room for the people you love, for yourself, and for work that moves forward"
+					alt="The Mentor, written by Apple Intelligence: the day drawn on one line, and a day that gave connection, care for yourself, rest, and keeping home"
 				/>
 			</PhoneFrame>
 		{/snippet}
 	</Feature>
+
+	<PatternsShowcase />
 
 	<SiriShowcase />
 
