@@ -28,7 +28,7 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: 'How does Meontor choose what to suggest?',
-				a: 'It learns from your own days: what you tend to log at this time, on this kind of day, and what usually follows. The more you log, the better it fits. It all happens on your iPhone.'
+				a: 'It learns from your own days: what you tend to log at this time, on this day of the week, and what usually follows. The more you log, the better it fits. It all happens on your iPhone.'
 			},
 			{
 				q: 'I logged something at the wrong time. Can I fix it?',
@@ -49,7 +49,7 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: 'What does the Mentor write?',
-				a: "A short reflection on what your day gave you, a line for each of your roles, one thing worth noticing, and a thought for the day. It reflects; it doesn't grade."
+				a: "Your day, drawn on a single line; a short reflection on what it gave you; something noticed about each of your roles; and a thought. Each week it adds what has held across the last four weeks. It reflects; it doesn't grade."
 			},
 			{
 				q: 'Why does a reflection say "Written on device"?',

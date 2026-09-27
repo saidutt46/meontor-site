@@ -57,7 +57,7 @@ scripts/
   verify-lib.js (+ .test.js), verify.js   the copy and origin checks
   export-wordmark.swift   SF Pro Rounded Semibold 48pt, tracking -0.6 → SVG outlines
   shots.sh                simulator screenshots via the app's DEBUG launch args
-static/images/screens/    {now,mood,capture,mentor,timeline}-{light,dark}.webp (780w)
+static/images/screens/    {now,mood,capture,mentor,mentor-week,timeline}-{light,dark}.webp (780w)
 static/images/widgets/    {medium,small,running}-{light,dark}.webp (2x, rounded)
 ```
 
@@ -73,7 +73,8 @@ static/images/widgets/    {medium,small,running}-{light,dark}.webp (2x, rounded)
 - `HowItLearns.svelte` conducts the app's onboarding centrepiece; `LearningDial.svelte` only draws it. Data and timings are a port of `MeontorCore/Onboarding/LearningDay.swift`, whose `LearningDayRankerTests` hold the tiles to the real ranker: **change the Swift first, then mirror it here** (`learningDay.test.ts` mirrors its maths).
 - Reduced motion, no JS and screen readers get the still card (the four moments), as the app does under Reduce Motion or VoiceOver.
 - Every mark sits in a `.mark-tint` wrapper; the layout sets `data-phase` on `<html>` from the visitor's hour, and `--phase-*` in `app.css` are Apple's system colours. Without JS the mark stays the midday blue.
-- The Mentor screenshot is from the owner's iPhone (Apple Intelligence, 2026-09-26), dark only, used for both schemes, with the simulator's 9:41 status bar laid over it.
+- The Mentor screenshots (`mentor`, `mentor-week`) come from the simulator at app build 7, written by Apple Intelligence (it runs in the iOS 27 simulator on this Mac; give it `SHOT_WAIT=50`). Check the byline says "Apple Intelligence", and that every light/dark pair differs: `for f in static/images/screens/*.webp; do echo "$f $(magick "$f" -colorspace Gray -format '%[fx:mean]' info:)"; done`.
+- "What you're learning about yourself" (`PatternsShowcase`) is drawn, not photographed: it sits below the fold of the app's week view. Its sentences are ones the app writes (the app's `DESIGN.md` §6.3 describes them).
 
 ## At launch
 
