@@ -56,7 +56,9 @@
 		<p>
 			The Mentor's reflections and thoughts are written by Apple Intelligence on your iPhone, from a
 			summary of your day. They are not sent to any AI service. If Apple Intelligence isn't
-			available, Meontor writes them on device without it, and says so.
+			available, Meontor writes them on device without it, and says so. Habits and symptoms (such as
+			smoking, alcohol, betting or headaches) are never shown to a language model, not even Apple's
+			on-device one: the Mentor states them plainly itself.
 		</p>
 	</section>
 

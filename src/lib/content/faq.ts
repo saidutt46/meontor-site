@@ -18,8 +18,12 @@ export const FAQ: FaqTopic[] = [
 			},
 			{ q: 'Is there an account?', a: 'No. Open the app and start logging.' },
 			{
+				q: 'Will Meontor send me notifications?',
+				a: 'If you want them: an evening note with a question for tonight, your week on its last evening, and at most one gentle check-in a day, in a part of the day you usually log. Never more than two a day, and each kind can be switched off in Settings. They are planned on your iPhone; there is no server.'
+			},
+			{
 				q: 'How do I add the widget?',
-				a: 'Touch and hold your Home Screen, tap Edit, then Add Widget, and choose Meontor. The medium size shows three suggestions and a thought.'
+				a: 'Touch and hold your Home Screen, tap Edit, then Add Widget, and choose Meontor. The medium size shows your day so far and three suggestions; the large adds the last thing you logged, six suggestions and a thought.'
 			}
 		]
 	},
@@ -49,11 +53,11 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: 'What does the Mentor write?',
-				a: "Your day, drawn on a single line; a short reflection on what it gave you; something noticed about each of your roles; and a thought. Each week it adds what has held across the last four weeks. It reflects; it doesn't grade."
+				a: "The shape of your day, drawn on a single line and put into words; what each of your roles held; something worth noticing; and a thought. At the bottom, how today sits in your recent weeks. Each week it adds what has held across the last four. You can look back at any day or week. It reflects; it doesn't grade."
 			},
 			{
 				q: 'Why does a reflection say "Written on device"?',
-				a: "That means Apple Intelligence wasn't available, so Meontor wrote it without a language model. It always tells you which one wrote it."
+				a: "It means no line on the page came from Apple Intelligence: it wasn't available, or what it wrote didn't pass Meontor's checks against your log. The Apple Intelligence button beside the date always tells you which."
 			}
 		]
 	},
