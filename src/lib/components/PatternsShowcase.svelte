@@ -28,9 +28,10 @@
 
 <Feature id="week" eyebrow="Each week" title="What you're learning about yourself." flip>
 	<p>
-		The week view draws your seven days on one shared line, so mornings line up and weekends look
-		like weekends. Below it, the Mentor shares what has held across the last four weeks: when your
-		focus gathers, what has kept its place, what came back and stayed.
+		The week view draws your week on one shared line, day by day, so mornings line up and weekends
+		look like weekends. It opens with how your weekdays ran against your weekend, and what kept its
+		place. Below it, the Mentor shares what has held across the last four weeks: when your focus
+		gathers, what has kept its place, what came back and stayed.
 	</p>
 	<p>
 		Meontor finds these itself, with fixed statistical bars, and waits until something has truly
@@ -41,7 +42,7 @@
 		<PhoneFrame>
 			<Screenshot
 				name="mentor-week"
-				alt="The Mentor's week: seven days drawn as strips on one line, lettered S M T W T F S, over a reflection written by Apple Intelligence"
+				alt="The Mentor's week, Sep 20 to 26: mornings for the work in hand, evenings for the people you love, a weekend for looking after yourself, over seven days drawn as strips on one line"
 			/>
 		</PhoneFrame>
 	{/snippet}

@@ -6,21 +6,22 @@
   Proprietary and confidential.
 -->
 <!--
-  The widgets at their true Home Screen size (medium 364 x 170 pt, small 170 x 170 pt),
+  The widgets at their true Home Screen size (large 364 x 382 pt, medium 364 x 170 pt,
+  small 170 x 170 pt), as build 11 draws them,
   on a wallpaper-like ground, rather than inside a phone.
 -->
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
 </script>
 
-{#snippet widget(name: string, width: number, alt: string)}
+{#snippet widget(name: string, width: number, height: number, alt: string)}
 	<picture>
 		<source srcset="/images/widgets/{name}-dark.webp" media="(prefers-color-scheme: dark)" />
 		<img
 			src="/images/widgets/{name}-light.webp"
 			{alt}
 			width={width * 2}
-			height="340"
+			height={height * 2}
 			loading="lazy"
 			decoding="async"
 			class="widget"
@@ -39,18 +40,34 @@
 		</h2>
 		<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
 			Meontor learns your rhythm from your own days and suggests what you're likely to log right
-			now. Tap on the Home Screen and it's logged, without opening the app. It carries a short
-			thought, refreshed as you use the app.
+			now. Tap a tile and it's logged, without opening the app; a rating like Mood opens it, so you
+			can choose a face. Above the tiles, the shape of your day so far, drawn on a single line. When
+			something is running, the timer takes the top, with Stop a tap away.
 		</p>
 	</div>
 	<div class="wallpaper fade-in mt-14 rounded-[2.5rem] px-5 py-14 sm:py-20" use:reveal>
 		<div class="flex flex-wrap items-center justify-center gap-5 sm:gap-6">
 			{@render widget(
-				'medium',
+				'large',
 				364,
-				'The medium widget: a thought, the day so far, and buttons for Coffee, Water and Walk'
+				382,
+				"The large widget: the day's line with its hours, the last thing logged, six tiles and a thought"
 			)}
-			{@render widget('small', 170, 'The small widget with one suggestion, Coffee')}
+			<div class="flex flex-col items-center gap-5 sm:gap-6">
+				{@render widget(
+					'medium',
+					364,
+					170,
+					'The medium widget: Sunday, 6 logged, the day drawn as a line, and tiles for Coffee, Water and Walk'
+				)}
+				{@render widget(
+					'running',
+					364,
+					170,
+					'The medium widget while Deep focus runs: a large timer, when it started, and a round Stop'
+				)}
+			</div>
+			{@render widget('small', 170, 170, 'The small widget with one suggestion, Coffee')}
 		</div>
 	</div>
 </section>

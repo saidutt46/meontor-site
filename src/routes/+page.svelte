@@ -60,6 +60,11 @@
 			focus and stop it when you're done. Rate your mood with a face.
 		</p>
 		<p>Meontor puts what you're most likely to log right now at the top of the screen.</p>
+		<p>
+			When you want more, add it: how many glasses, the calories in a meal, what kind of coffee, a
+			note, or a measure like your weight. Set any activity to ask every time, and swipe to edit or
+			delete, with Undo.
+		</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
@@ -96,14 +101,21 @@
 			reflects: what kind of day it was, and something noticed about each of your roles.
 		</p>
 		<p>
-			It's written by Apple Intelligence on your iPhone, or written on device when Apple
-			Intelligence isn't available. It never measures one part of your life against another.
+			It opens with the shape of your day, written by Meontor itself, and never about hours still to
+			come. Apple Intelligence on your iPhone writes the rest, or Meontor writes it on device when
+			Apple Intelligence isn't available. Tap the calendar to look back at any day or week, or tap
+			the line for the day in order. It never measures one part of your life against another.
+		</p>
+		<p>
+			If you like, it reads your day back each evening, around when you usually wind down, with a
+			question for tonight you can answer right in the notification. Your answer is kept with that
+			day.
 		</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
 					name="mentor"
-					alt="The Mentor, written by Apple Intelligence: the day drawn on one line, and a day that gave connection, care for yourself, rest, and keeping home"
+					alt="The Mentor on Saturday: the morning looked after you, with the gym; the afternoon put things in their place, with the laundry; the evening left room to unwind, with a film. The day drawn on one line below."
 				/>
 			</PhoneFrame>
 		{/snippet}

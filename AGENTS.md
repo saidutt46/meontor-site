@@ -58,7 +58,7 @@ scripts/
   export-wordmark.swift   SF Pro Rounded Semibold 48pt, tracking -0.6 → SVG outlines
   shots.sh                simulator screenshots via the app's DEBUG launch args
 static/images/screens/    {now,mood,capture,mentor,mentor-week,timeline}-{light,dark}.webp (780w)
-static/images/widgets/    {medium,small,running}-{light,dark}.webp (2x, rounded)
+static/images/widgets/    {large,medium,small,running}-{light,dark}.webp (2x, rounded)
 ```
 
 ## Assets
@@ -66,18 +66,18 @@ static/images/widgets/    {medium,small,running}-{light,dark}.webp (2x, rounded)
 - **Mark:** `Mark.svelte` redraws `MeontorMarkArtwork` (petal 26 x 62, offset 19, core 15, dot 7 on a 100 grid). Colour via `currentColor`.
 - **Wordmark:** `swift scripts/export-wordmark.swift > src/lib/assets/wordmark-path.ts`.
 - **Icons:** favicons and OG image come from `~/Code/ios/Meontor/docs/design/app-icon/app-icon-1024.png` (commands in the plan, Task 2).
-- **Screenshots:** build the app for the booted simulator, then `scripts/shots.sh <now|timeline|mentor|search> <light|dark>`. Load data once with `-sampleLife` (it ignores `-screen`). Widgets: `-widgets medium|small`, cropped at 3x bounds with a 66px corner. The DEBUG-only magenta diagnostic line on the Mentor card is painted out, since release builds never show it.
+- **Screenshots:** build the app for the booted simulator, then `scripts/shots.sh <now|timeline|mentor|search> <light|dark>`. Load data once with `-sampleLife` (it ignores `-screen`). Widgets (build 11 design): `-widgets small|medium|large|live` draws the DEBUG gallery (Resting, Running, Fresh install, Empty); crop medium/small/large from Resting and `running` from the medium Running card, at 3x (medium 1092x510, small 510x510, large 1092x1146 px), corner 24 pt = 72 px, transparent, then down to 2x. Shoot in the afternoon or evening so the arc has a day on it. Mentor shots: `SHOT_NAME=mentor scripts/shots.sh mentor light -mentorDaysBack 1` (the opening follows the clock, so a past day reads whole), `SHOT_NAME=mentor-week ... -mentorPeriod week -mentorDaysBack 1` on a Sunday. The simulator sometimes drops launch arguments on a quick relaunch: run the line again. The DEBUG-only magenta diagnostic line on the Mentor card is painted out, since release builds never show it.
 
 ## How it learns and the hour colour
 
 - `HowItLearns.svelte` conducts the app's onboarding centrepiece; `LearningDial.svelte` only draws it. Data and timings are a port of `MeontorCore/Onboarding/LearningDay.swift`, whose `LearningDayRankerTests` hold the tiles to the real ranker: **change the Swift first, then mirror it here** (`learningDay.test.ts` mirrors its maths).
 - Reduced motion, no JS and screen readers get the still card (the four moments), as the app does under Reduce Motion or VoiceOver.
 - Every mark sits in a `.mark-tint` wrapper; the layout sets `data-phase` on `<html>` from the visitor's hour, and `--phase-*` in `app.css` are Apple's system colours. Without JS the mark stays the midday blue.
-- The Mentor screenshots (`mentor`, `mentor-week`) come from the simulator at app build 7, written by Apple Intelligence (it runs in the iOS 27 simulator on this Mac; give it `SHOT_WAIT=50`). Check the byline says "Apple Intelligence", and that every light/dark pair differs: `for f in static/images/screens/*.webp; do echo "$f $(magick "$f" -colorspace Gray -format '%[fx:mean]' info:)"; done`.
+- The Mentor screenshots (`mentor`, `mentor-week`) come from the simulator at app build 11 (2026-09-27). Apple Intelligence did not answer in the simulator that evening, so they are written on device, which the copy allows for; it worked there on 2026-09-26 and is unreliable in the simulator (the app's CLAUDE.md). For an Apple Intelligence shot, give it `SHOT_WAIT=50` or use one from the owner's iPhone. Check the byline's Apple Intelligence button shows the plain symbol (the badge with an x means written on device), and that every light/dark pair differs: `for f in static/images/screens/*.webp; do echo "$f $(magick "$f" -colorspace Gray -format '%[fx:mean]' info:)"; done`.
 - "What you're learning about yourself" (`PatternsShowcase`) is drawn, not photographed: it sits below the fold of the app's week view. Its sentences are ones the app writes (the app's `DESIGN.md` §6.3 describes them).
 
 ## At launch
 
 1. Set `APP_STORE_URL` (the CTA becomes a link; add `app-id=` to the `apple-itunes-app` meta in `SeoHead`).
-2. Set `SUPPORT_EMAIL` once meontor.com has mail.
+2. `SUPPORT_EMAIL` is graymodule@proton.me (owner, 2026-09-27), the address the app's feedback sheet uses; change it there if meontor.com gets mail.
 3. Register meontor.com, create the GitHub repo and Vercel project (owner approval).
