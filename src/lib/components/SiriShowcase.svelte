@@ -20,8 +20,7 @@
 			Log from wherever you are.
 		</h2>
 		<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
-			Say it to Siri, add a control to Control Center or the Action button, and keep anything
-			running on your Lock Screen and in the Dynamic Island.
+			Siri, Control Center, the Action button or your Lock Screen.
 		</p>
 	</div>
 	<div class="fade-in mt-14 grid gap-5 md:grid-cols-3" use:reveal>

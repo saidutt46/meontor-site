@@ -19,7 +19,7 @@ export const FAQ: FaqTopic[] = [
 			{ q: 'Is there an account?', a: 'No. Open the app and start logging.' },
 			{
 				q: 'Will Meontor send me notifications?',
-				a: 'If you want them: an evening note with a question for tonight, your week on its last evening, and at most one gentle check-in a day, in a part of the day you usually log. Never more than two a day, and each kind can be switched off in Settings. They are planned on your iPhone; there is no server.'
+				a: 'If you want them: an evening note with a question for tonight you can answer right in the notification, your week on its last evening, and at most one gentle check-in a day, in a part of the day you usually log. Never more than two a day, and each kind can be switched off in Settings. They are planned on your iPhone; there is no server.'
 			},
 			{
 				q: 'How do I add the widget?',
@@ -43,6 +43,10 @@ export const FAQ: FaqTopic[] = [
 				a: 'Yes. Try "Log coffee in Meontor" or "Start deep focus in Meontor". You can also add Meontor to Control Center, the Lock Screen or the Action button.'
 			},
 			{
+				q: 'What details can I add?',
+				a: 'How many glasses, the calories in a meal, what kind of coffee, a note, or a measure like your weight. Rate your mood, energy or sleep with a face. Set any activity to ask every time.'
+			},
+			{
 				q: 'Can I add my own activities and categories?',
 				a: 'Yes. Tap + in Quick Capture, or go to Settings, then Activities or Categories.'
 			}
@@ -51,6 +55,18 @@ export const FAQ: FaqTopic[] = [
 	{
 		topic: 'The Mentor',
 		items: [
+			{
+				q: "Who writes the Mentor's words?",
+				a: "Meontor writes the opening itself, from the shape of your day, and never about hours still to come. Apple Intelligence on your iPhone writes the rest, or Meontor writes it on device when Apple Intelligence isn't available. It never measures one part of your life against another."
+			},
+			{
+				q: 'Can I look back at earlier days?',
+				a: 'Yes. Tap the calendar, or swipe the reflection, for any past day or week. A past day stays as it was written.'
+			},
+			{
+				q: 'What is "What you\'re learning about yourself"?',
+				a: 'After about three weeks, up to three things that have held across your last four weeks, found with fixed statistical bars, never by a language model. They always point to something that goes well, and never touch habits like smoking or drinking, pain or stress, or your roles.'
+			},
 			{
 				q: 'What does the Mentor write?',
 				a: "The shape of your day, drawn on a single line and put into words; what each of your roles held; something worth noticing; and a thought. At the bottom, how today sits in your recent weeks. Each week it adds what has held across the last four. You can look back at any day or week. It reflects; it doesn't grade."

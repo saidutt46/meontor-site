@@ -27,17 +27,7 @@
 </script>
 
 <Feature id="week" eyebrow="Each week" title="What you're learning about yourself." flip>
-	<p>
-		The week view draws your week on one shared line, day by day, so mornings line up and weekends
-		look like weekends. It opens with how your weekdays ran against your weekend, and what kept its
-		place. Below it, the Mentor shares what has held across the last four weeks: when your focus
-		gathers, what has kept its place, what came back and stayed.
-	</p>
-	<p>
-		Meontor finds these itself, with fixed statistical bars, and waits until something has truly
-		held, usually about three weeks in. Every one of them points to something that goes well. Never
-		habits like smoking or drinking, never pain or stress, and never your roles.
-	</p>
+	<p>After a few weeks, it notices what holds: when you focus, what makes a good day.</p>
 	{#snippet media()}
 		<PhoneFrame>
 			<Screenshot
