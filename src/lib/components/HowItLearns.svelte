@@ -261,8 +261,7 @@
 			It learns your day.
 		</h2>
 		<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
-			The more you keep, the better it knows what comes next: coffee in the morning, focus after
-			lunch, a walk at dusk. All on your iPhone.
+			The more you log, the better it knows what comes next. All on your iPhone.
 		</p>
 	</div>
 

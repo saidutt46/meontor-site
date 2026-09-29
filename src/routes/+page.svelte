@@ -23,9 +23,9 @@
 	import { COMPANY, SITE_URL } from '$lib/constants/app';
 
 	const calm = [
-		{ icon: 'leaf', title: 'No streaks', body: 'A quiet week is still a week. Nothing resets.' },
-		{ icon: 'scale', title: 'No scores', body: 'Your day is described, never graded.' },
-		{ icon: 'heart', title: 'No comparisons', body: 'Your roles are reflected on, never weighed.' }
+		{ icon: 'leaf', title: 'No streaks' },
+		{ icon: 'scale', title: 'No scores' },
+		{ icon: 'heart', title: 'No comparisons' }
 	];
 </script>
 
@@ -55,16 +55,7 @@
 
 <div id="features" class="scroll-mt-14">
 	<Feature eyebrow="Capture" title="One tap, under a second.">
-		<p>
-			Coffee, a walk, a call with your mum. Tap it and it's in your day. Start a stretch like deep
-			focus and stop it when you're done. Rate your mood with a face.
-		</p>
-		<p>Meontor puts what you're most likely to log right now at the top of the screen.</p>
-		<p>
-			When you want more, add it: how many glasses, the calories in a meal, what kind of coffee, a
-			note, or a measure like your weight. Set any activity to ask every time, and swipe to edit or
-			delete, with Undo.
-		</p>
+		<p>Coffee? Tap. Walk? Tap. Mood? Pick a face. Details when you want them.</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
@@ -80,11 +71,7 @@
 	<HowItLearns />
 
 	<Feature eyebrow="Everything else" title="Anything else is one search away." flip>
-		<p>
-			Over a hundred activities across everyday life, in categories you can reorder and make your
-			own. Favourites sit at the top.
-		</p>
-		<p>Quick Capture sits above the tab bar on every screen, so it's always one tap away.</p>
+		<p>Over a hundred everyday activities, in categories you can make your own.</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
@@ -96,21 +83,7 @@
 	</Feature>
 
 	<Feature id="mentor" eyebrow="Mentor" title="What your day gave you.">
-		<p>
-			Open the Mentor and your day is drawn on a single line, from your first entry to now. Then it
-			reflects: what kind of day it was, and something noticed about each of your roles.
-		</p>
-		<p>
-			It opens with the shape of your day, written by Meontor itself, and never about hours still to
-			come. Apple Intelligence on your iPhone writes the rest, or Meontor writes it on device when
-			Apple Intelligence isn't available. Tap the calendar to look back at any day or week, or tap
-			the line for the day in order. It never measures one part of your life against another.
-		</p>
-		<p>
-			If you like, it reads your day back each evening, around when you usually wind down, with a
-			question for tonight you can answer right in the notification. Your answer is kept with that
-			day.
-		</p>
+		<p>Your day in a sentence, written on your iPhone. A reflection, never a score.</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
@@ -126,10 +99,7 @@
 	<SiriShowcase />
 
 	<Feature eyebrow="Your days" title="Every day, drawn as it happened." flip>
-		<p>
-			Your day on a single line: moments as dots, stretches with their length, coloured by what they
-			were. Swipe to fix or remove an entry.
-		</p>
+		<p>Moments as dots, stretches as bars. Swipe to fix an entry.</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
@@ -147,7 +117,7 @@
 				Nothing to catch up on.
 			</h2>
 			<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
-				Nothing counts down. Meontor adds up what your day held and never shows what it didn't.
+				Nothing counts down. Nothing resets.
 			</p>
 		</div>
 		<div class="fade-in mt-14 grid gap-10 text-center sm:grid-cols-3" use:reveal>
@@ -155,7 +125,6 @@
 				<div class="flex flex-col items-center">
 					<span class="text-accent"><Icon name={item.icon} class="size-8" /></span>
 					<h3 class="mt-4 text-lg font-semibold">{item.title}</h3>
-					<p class="mt-2 text-label-2">{item.body}</p>
 				</div>
 			{/each}
 		</div>

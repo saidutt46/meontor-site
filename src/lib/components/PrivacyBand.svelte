@@ -10,16 +10,10 @@
 	import Icon from './Icon.svelte';
 
 	const points = [
-		{ title: 'No account', body: "Open it and start. There's nothing to sign up for." },
-		{ title: 'No server', body: 'Meontor has no server. Your days never leave your phone.' },
-		{
-			title: 'No tracking',
-			body: "No analytics, no ads, no third parties. This website doesn't track you either."
-		},
-		{
-			title: 'Health, if you want it',
-			body: 'Connect Apple Health to let the Mentor see your sleep and steps. It reads, and never writes.'
-		}
+		{ title: 'No account', body: 'Nothing to sign up for.' },
+		{ title: 'No server', body: 'Your days never leave your phone.' },
+		{ title: 'No tracking', body: 'Not in the app. Not on this site.' },
+		{ title: 'Health, if you want it', body: 'Read, never written.' }
 	];
 </script>
 

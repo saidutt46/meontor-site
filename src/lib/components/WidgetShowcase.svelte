@@ -39,10 +39,7 @@
 			Three things, right when you need them.
 		</h2>
 		<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
-			Meontor learns your rhythm from your own days and suggests what you're likely to log right
-			now. Tap a tile and it's logged, without opening the app; a rating like Mood opens it, so you
-			can choose a face. Above the tiles, the shape of your day so far, drawn on a single line. When
-			something is running, the timer takes the top, with Stop a tap away.
+			It learns your rhythm and puts your next tap on your Home Screen. No need to open the app.
 		</p>
 	</div>
 	<div class="wallpaper fade-in mt-14 rounded-[2.5rem] px-5 py-14 sm:py-20" use:reveal>
