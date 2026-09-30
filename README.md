@@ -18,7 +18,7 @@ This repository hosts the **marketing and support site** for Meontor. The app it
 
 - **Framework:** SvelteKit 2 (Svelte 5 runes), fully prerendered
 - **Styling:** Tailwind CSS 4 with Apple system colour tokens, SF system fonts (no web fonts)
-- **Privacy:** no analytics, no cookies, no third-party requests (enforced by CSP and `pnpm verify`)
+- **Privacy:** no cookies, no third-party requests (enforced by CSP and `pnpm verify`); cookieless Vercel Web Analytics for page views
 - **Deployment:** Vercel
 
 ### Local Development

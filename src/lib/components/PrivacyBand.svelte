@@ -12,7 +12,7 @@
 	const points = [
 		{ title: 'No account', body: 'Nothing to sign up for.' },
 		{ title: 'No server', body: 'Your days never leave your phone.' },
-		{ title: 'No tracking', body: 'Not in the app. Not on this site.' },
+		{ title: 'No tracking', body: 'Not in the app. This site counts visits, without cookies.' },
 		{ title: 'Health, if you want it', body: 'Read, never written.' }
 	];
 </script>

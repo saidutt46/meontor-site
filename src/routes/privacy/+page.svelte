@@ -27,7 +27,7 @@
 <LegalPage
 	title="Privacy Policy"
 	intro="Meontor is an iPhone app for logging your day and reflecting on it. It has no account, no server and no tracking. Everything you log stays on your iPhone."
-	effective="September 26, 2026"
+	effective="September 29, 2026"
 >
 	<section>
 		<h2>1. What Meontor keeps, and where</h2>
@@ -119,8 +119,10 @@
 	<section>
 		<h2>9. This website</h2>
 		<p>
-			This website sets no cookies, runs no analytics and loads nothing from other companies. Our
-			host, Vercel, may keep standard server logs, such as IP addresses, for security.
+			This website sets no cookies and loads nothing from other companies. It counts page views with
+			Vercel Web Analytics, which runs from this site's own address, uses no cookies and does not
+			identify you. Our host, Vercel, may keep standard server logs, such as IP addresses, for
+			security.
 		</p>
 	</section>
 
