@@ -30,7 +30,7 @@ pnpm format
 
 ## Rules
 
-1. **No cookies, no third-party requests.** The CSP in `vercel.json` is `'self'` only. The one analytics is Vercel Web Analytics (owner, 2026-09-29): cookieless page views, `injectAnalytics` in `src/routes/+layout.ts`, served from this site's own `/_vercel/insights/`. The privacy policy (§9) and the privacy band say exactly this; change them together.
+1. **No cookies, no third-party requests.** The CSP in `vercel.json` is `'self'` only. The one analytics is Vercel Web Analytics (owner, 2026-09-29): cookieless page views, `injectAnalytics` in `src/routes/+layout.ts`, served from this site's own address (on Vercel a project-specific path such as `/3da9b651fa253f23/script.js`, `/_vercel/insights/` in `pnpm preview`); it ignores automated browsers, so check it with a real browser. The privacy policy (§9) and the privacy band say exactly this; change them together.
 2. **Copy:** no guilt, no deficit, no comparison, no role weighing, no medical claims. Say which engine writes the Mentor ("Apple Intelligence" or "written on device").
 3. **Privacy claims** in `src/routes/privacy` were checked against the app's code on 2026-09-26 (no networking code, HealthKit `toShare: []` with five read types, privacy manifest with no tracking). Re-check the app before changing a claim.
 4. **Colours** are tokens in `src/app.css` (`--canvas`, `--grouped`, `--label*`, `--separator`, `--accent`); light and dark follow `prefers-color-scheme`, with no toggle. Accent is `#4F63D9` light / `#7D94F0` dark, chosen for 4.5:1 contrast.
