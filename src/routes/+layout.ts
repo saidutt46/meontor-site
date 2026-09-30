@@ -7,3 +7,10 @@
  */
 export const prerender = true;
 export const trailingSlash = 'never';
+
+import { dev } from '$app/environment';
+import { injectAnalytics } from '@vercel/analytics/sveltekit';
+
+// Vercel Web Analytics (owner, 2026-09-29): cookieless page views, served from
+// this site's own origin (/_vercel/insights/), so the CSP stays 'self'.
+injectAnalytics({ mode: dev ? 'development' : 'production' });
