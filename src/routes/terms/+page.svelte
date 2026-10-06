@@ -14,7 +14,7 @@
 
 <SeoHead
 	title="Terms of Use · Meontor"
-	description="The terms for using Meontor, a free iPhone app for logging your day and reflecting on it."
+	description="The terms for using Meontor, a free app for iPhone and iPad for logging your day and reflecting on it."
 	path="/terms"
 	imageAlt="Meontor terms of use"
 />
@@ -27,8 +27,8 @@
 	<section>
 		<h2>1. About Meontor</h2>
 		<p>
-			Meontor is a free iPhone app for logging your day and reflecting on it, published by Daivat
-			Creations. It is provided at no cost and does not require an account.
+			Meontor is a free app for iPhone and iPad for logging your day and reflecting on it, published
+			by Daivat Creations. It is provided at no cost and does not require an account.
 		</p>
 	</section>
 

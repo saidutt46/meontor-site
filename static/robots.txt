@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://meontor.com/sitemap.xml
+Sitemap: https://meontor-site.vercel.app/sitemap.xml

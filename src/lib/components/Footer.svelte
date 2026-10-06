@@ -37,7 +37,7 @@
 		</div>
 		<div class="mt-12 space-y-2 border-t border-separator pt-6 text-xs text-label-3">
 			<p>© 2026 {COMPANY}.</p>
-			<p>Apple, iPhone, Siri and Apple Intelligence are trademarks of Apple Inc.</p>
+			<p>Apple, iPhone, iPad, Siri and Apple Intelligence are trademarks of Apple Inc.</p>
 		</div>
 	</div>
 </footer>

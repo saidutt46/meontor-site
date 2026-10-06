@@ -2,9 +2,9 @@
 
 **Stack:** SvelteKit 2 + Svelte 5 + Tailwind CSS v4 (no Three.js, no web fonts)
 **Target:** Marketing & support site for the Meontor iOS app (`~/Code/ios/Meontor`)
-**Deploy:** Vercel, fully prerendered static site. **Not deployed yet**; meontor.com not registered yet.
+**Deploy:** Vercel, fully prerendered static site, git-connected (`main` deploys production). Live at https://meontor-site.vercel.app, which is `SITE_URL` until meontor.com is bought (owner, 2026-10-05); the App Store listing links its `/privacy` and `/support`.
 
-The app's source of truth: `~/Code/ios/Meontor/{PLAN,DESIGN,HANDOFF}.md`. Every claim on this site must be true of the app. Design and plan for this site: `docs/superpowers/specs/2026-09-26-meontor-site-design.md`, `docs/superpowers/plans/2026-09-26-meontor-site.md`.
+The app's source of truth: `~/Code/ios/Meontor/{PLAN,DESIGN,HANDOFF}.md`; the latest brief from the app side is `docs/app-handoff-2026-10-05-v1.md` (v1: iOS 26, iPhone and iPad, free). Every claim on this site must be true of the app. Design and plan for this site: `docs/superpowers/specs/2026-09-26-meontor-site-design.md`, `docs/superpowers/plans/2026-09-26-meontor-site.md`.
 
 ---
 
@@ -80,4 +80,4 @@ static/images/widgets/    {large,medium,small,running}-{light,dark}.webp (2x, ro
 
 1. Set `APP_STORE_URL` (the CTA becomes a link; add `app-id=` to the `apple-itunes-app` meta in `SeoHead`).
 2. `SUPPORT_EMAIL` is graymodule@proton.me (owner, 2026-09-27), the address the app's feedback sheet uses; change it there if meontor.com gets mail.
-3. Register meontor.com, create the GitHub repo and Vercel project (owner approval).
+3. When meontor.com is bought: add it in Vercel, then change `SITE_URL`, `static/sitemap.xml`, `static/robots.txt` and `SITE` in `scripts/verify.js` together, and tell the app side the new `/privacy` and `/support` URLs (owner approval).
