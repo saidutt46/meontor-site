@@ -3,7 +3,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { findCopyViolations, findForeignOrigins, findForeignOriginsInAsset } from './verify-lib.js';
 
-const SITE = 'https://meontor.com';
+const SITE = 'https://meontor-site.vercel.app'; // SITE_URL in src/lib/constants/app.ts
 const ROOT = '.svelte-kit/output/prerendered/pages';
 const ASSETS = '.svelte-kit/output/client/_app';
 

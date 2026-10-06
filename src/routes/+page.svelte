@@ -31,7 +31,7 @@
 
 <SeoHead
 	title="Meontor · Log your day in a tap"
-	description="Meontor is a calm iPhone app for logging your day in a tap, with a smart widget and an on-device Mentor that reflects on what your day gave you. No account, no tracking."
+	description="Meontor is a calm app for iPhone and iPad for logging your day in a tap, with a smart widget and an on-device Mentor that reflects on what your day gave you. No account, no tracking."
 	path="/"
 	imageAlt="The Meontor mark and wordmark, with the line Moment + Mentor"
 	structuredData={[
@@ -84,6 +84,7 @@
 
 	<Feature id="mentor" eyebrow="Mentor" title="What your day gave you.">
 		<p>Your day in a sentence, written on your iPhone. A reflection, never a score.</p>
+		<p>In the evening, a question for tonight, answered in a word or a page.</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot

@@ -33,6 +33,6 @@ describe('SeoHead', () => {
 	});
 	it('keeps the canonical on an indexed page', () => {
 		const { head } = render(SeoHead, { props: { title: 'x', description: 'x', path: '/support' } });
-		expect(head).toContain('href="https://meontor.com/support"');
+		expect(head).toContain('href="https://meontor-site.vercel.app/support"');
 	});
 });

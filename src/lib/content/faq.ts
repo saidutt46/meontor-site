@@ -14,12 +14,12 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: 'What does Meontor need?',
-				a: "An iPhone running iOS 27. The Mentor uses Apple Intelligence when your iPhone supports it and it's turned on. Otherwise Meontor writes reflections on device without it."
+				a: "An iPhone or iPad running iOS 26 or later. The Mentor uses Apple Intelligence when your device supports it and it's turned on. Otherwise Meontor writes reflections on device without it."
 			},
 			{ q: 'Is there an account?', a: 'No. Open the app and start logging.' },
 			{
 				q: 'Will Meontor send me notifications?',
-				a: 'If you want them: an evening note with a question for tonight you can answer right in the notification, your week on its last evening, and at most one gentle check-in a day, in a part of the day you usually log. Never more than two a day, and each kind can be switched off in Settings. They are planned on your iPhone; there is no server.'
+				a: 'If you want them: an evening note with a question for tonight you can answer right in the notification, or in the app from the evening, your week on its last evening, and at most one gentle check-in a day, in a part of the day you usually log. Never more than two a day, and each kind can be switched off in Settings. They are planned on your device; there is no server.'
 			},
 			{
 				q: 'How do I add the widget?',
@@ -32,7 +32,7 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: 'How does Meontor choose what to suggest?',
-				a: 'It learns from your own days: what you tend to log at this time, on this day of the week, and what usually follows. The more you log, the better it fits. It all happens on your iPhone.'
+				a: 'It learns from your own days: what you tend to log at this time, on this day of the week, and what usually follows. The more you log, the better it fits. It all happens on your device.'
 			},
 			{
 				q: 'I logged something at the wrong time. Can I fix it?',
@@ -57,7 +57,7 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: "Who writes the Mentor's words?",
-				a: "Meontor writes the opening itself, from the shape of your day, and never about hours still to come. Apple Intelligence on your iPhone writes the rest, or Meontor writes it on device when Apple Intelligence isn't available. It never measures one part of your life against another."
+				a: "Meontor writes the opening itself, from the shape of your day, and never about hours still to come. Apple Intelligence on your device writes the rest, or Meontor writes it on device when Apple Intelligence isn't available. It never measures one part of your life against another."
 			},
 			{
 				q: 'Can I look back at earlier days?',
@@ -80,12 +80,22 @@ export const FAQ: FaqTopic[] = [
 	{
 		topic: 'Privacy and data',
 		items: [
-			{ q: 'Where is my data?', a: 'On your iPhone, and nowhere else. Meontor has no server.' },
+			{
+				q: 'Where is my data?',
+				a: 'On your device, and nowhere else. Meontor has no server and no sync, so your iPhone and iPad each keep their own log.'
+			},
 			{
 				q: 'What does Meontor read from Health?',
 				a: 'Sleep, steps, active energy, resting heart rate and workouts, each one once you turn it on, and never before. It never writes to Health.'
 			},
-			{ q: 'Can I export or erase my data?', a: 'Yes, from Settings, then Privacy.' },
+			{
+				q: 'Can I export or erase my data?',
+				a: 'Yes, from Settings, then Privacy. Export saves your activities and entries as a file you choose where to keep; Erase removes everything.'
+			},
+			{
+				q: 'Can I lock Meontor?',
+				a: "Yes. Turn on Require Face ID (or Touch ID, or your passcode) in Settings, then Privacy. While it's locked, nothing of your log shows, not even in the app switcher."
+			},
 			{
 				q: 'What happens if I delete the app?',
 				a: "Its data is deleted with it, unless it's in a backup."
