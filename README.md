@@ -4,13 +4,13 @@
 
 _Log your day in a tap. Understand it in a sentence._
 
-[Website](https://meontor.com) (not yet live) • [Support](https://meontor.com/support)
+[Website](https://meontor-site.vercel.app) • [Support](https://meontor-site.vercel.app/support) • [Privacy](https://meontor-site.vercel.app/privacy)
 
 ---
 
 ## Overview
 
-Meontor is an iPhone app for logging your day: one tap to capture a moment, a smart Home Screen widget that suggests what you're likely to log right now, and an on-device Mentor, written by Apple Intelligence, that reflects on what your day gave you. No account, no server, no tracking.
+Meontor is an app for iPhone and iPad (iOS 26 or later) for logging your day: one tap to capture a moment, a smart Home Screen widget that suggests what you're likely to log right now, and an on-device Mentor, written by Apple Intelligence, that reflects on what your day gave you. No account, no server, no tracking.
 
 This repository hosts the **marketing and support site** for Meontor. The app itself lives in a private repository.
 
@@ -19,7 +19,7 @@ This repository hosts the **marketing and support site** for Meontor. The app it
 - **Framework:** SvelteKit 2 (Svelte 5 runes), fully prerendered
 - **Styling:** Tailwind CSS 4 with Apple system colour tokens, SF system fonts (no web fonts)
 - **Privacy:** no cookies, no third-party requests (enforced by CSP and `pnpm verify`); cookieless Vercel Web Analytics for page views
-- **Deployment:** Vercel
+- **Deployment:** Vercel, git-connected: merging to `main` deploys https://meontor-site.vercel.app (meontor.com later)
 
 ### Local Development
 

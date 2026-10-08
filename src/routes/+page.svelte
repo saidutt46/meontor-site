@@ -17,7 +17,6 @@
 	import SiriShowcase from '$lib/components/SiriShowcase.svelte';
 	import PrivacyBand from '$lib/components/PrivacyBand.svelte';
 	import AppStoreCta from '$lib/components/AppStoreCta.svelte';
-	import Mark from '$lib/components/Mark.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import { COMPANY, SITE_URL } from '$lib/constants/app';
@@ -136,7 +135,14 @@
 
 <section class="px-5 py-24 sm:py-32">
 	<div class="fade-in flex flex-col items-center text-center" use:reveal>
-		<span class="mark-tint"><Mark size={64} /></span>
+		<img
+			src="/images/app-icon.webp"
+			alt="The Meontor app icon"
+			width="96"
+			height="96"
+			loading="lazy"
+			decoding="async"
+		/>
 		<h2 class="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl">Start with one tap.</h2>
 		<div class="mt-8"><AppStoreCta /></div>
 	</div>
