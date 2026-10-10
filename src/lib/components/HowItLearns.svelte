@@ -26,6 +26,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import LearningDial, { type DialDot } from './LearningDial.svelte';
 	import Icon from './Icon.svelte';
+	import Mark from './Mark.svelte';
 	import {
 		Beat,
 		MOVED_KEY,
@@ -340,27 +341,7 @@
 			<ul class="overflow-hidden rounded-3xl bg-elevated">
 				{#each stops as s (s.hour)}
 					<li class="flex items-center gap-4 border-b border-separator px-5 py-4 last:border-b-0">
-						<svg
-							viewBox="0 0 100 100"
-							class="size-9 shrink-0"
-							style:color={phaseColor(s.phase)}
-							aria-hidden="true"
-						>
-							{#each [0, 60, 120, 180, 240, 300] as angle (angle)}
-								<rect
-									x="37"
-									y="0"
-									width="26"
-									height="62"
-									rx="13"
-									fill="currentColor"
-									fill-opacity="0.55"
-									transform="rotate({angle} 50 50)"
-								/>
-							{/each}
-							<circle cx="50" cy="50" r="15" fill="var(--elevated)" />
-							<circle cx="50" cy="50" r="7" fill="currentColor" />
-						</svg>
+						<span class="shrink-0" style:color={phaseColor(s.phase)}><Mark size={36} /></span>
 						<div>
 							<p class="flex items-center gap-1.5 font-semibold">
 								<Icon name={timeGlyph[s.phase]} class="size-4" />

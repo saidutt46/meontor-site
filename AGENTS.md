@@ -84,7 +84,7 @@ static/images/widgets/    {large,medium,small,running}-{light,dark}.webp (2x, ro
 
 ## Assets
 
-- **Mark:** `Mark.svelte` redraws `MeontorMarkArtwork` (petal 26 x 62, offset 19, core 15, dot 7 on a 100 grid). Colour via `currentColor`.
+- **Mark:** `Mark.svelte` redraws `MeontorMarkArtwork` (app `main` `0f3e839`, 2026-10-10) on a 100 grid: petal 26 x 62, offset 19, core 15, dot 7. Drawn as the app icon is, flat: back fan (60/180/300°) `color-mix(currentColor 76%, black)` at 0.78 under the front fan (0/120/240°) at 0.82; the star (each point a petal clipped by its neighbour) solid on a small drop shadow, lifted 18% toward white in dark mode; the core cut out of all of it; the dot solid. Colour via `currentColor`. If anything ever turns it, use 120° steps.
 - **Wordmark:** `swift scripts/export-wordmark.swift > src/lib/assets/wordmark-path.ts`.
 - **Icons** (the Liquid Glass icon, app `main` `892be39`, 2026-10-07): every raster comes from Icon Composer's export `~/Code/ios/Meontor/docs/design/icon/final/app-icon-1024.png` (RGBA, transparent rounded corners). The app's old flat icon (`docs/design/app-icon/`) is history.
   - `apple-touch-icon.png` (180), `icon-192.png`, `icon-512.png`: flattened on the ground's dark end, since iOS and Android mask them: `magick "$ICON" -background '#0A0D14' -flatten -resize 180x180 static/apple-touch-icon.png`. `manifest.json` colours are `#0A0D14` to match.

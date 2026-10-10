@@ -27,6 +27,7 @@
 </script>
 
 <script lang="ts">
+	import Mark from './Mark.svelte';
 	import { curvePath } from '$lib/learning/learningDay';
 	import { phaseColor, type Phase } from '$lib/learning/phase';
 
@@ -53,8 +54,6 @@
 		instant: boolean;
 	} = $props();
 
-	const id = $props.id();
-
 	// MeontorSize.LearningDial, as fractions of a 290-point diameter.
 	const D = 290;
 	const C = D / 2;
@@ -72,17 +71,6 @@
 </script>
 
 <svg viewBox="0 0 {D} {D}" class="dial" class:instant style:--tint={tint} aria-hidden="true">
-	<defs>
-		<linearGradient id="petal-{id}" x1="0" y1="0" x2="0" y2="1">
-			<stop offset="0" stop-color="currentColor" stop-opacity="0.85" />
-			<stop offset="1" stop-color="currentColor" stop-opacity="0.25" />
-		</linearGradient>
-		<mask id="core-{id}">
-			<rect width="100" height="100" fill="white" />
-			<circle cx="50" cy="50" r="15" fill="black" />
-		</mask>
-	</defs>
-
 	<!-- The day: a ring that draws itself in, with midnight, six, noon and six. -->
 	<circle class="ring" cx={C} cy={C} r={RING} pathLength="1" stroke-dashoffset={1 - ringProgress} />
 	<g class="fades" style:opacity={ringProgress}>
@@ -120,25 +108,11 @@
 		<circle cx={C} cy={C - RING} r="4" />
 	</g>
 
-	<!-- The mark at the centre, in the moment's colour, turning a petal at each stop. -->
+	<!-- The mark at the centre, in the moment's colour, turning a fan (120 degrees) at each
+	     stop, as the app's dial does: 60 would stand the back fan upright. -->
 	<g class="mark" class:shown={markShown} transform="translate({C - MARK / 2} {C - MARK / 2 - 12})">
-		<g class="petals" style:transform="rotate({nudge * 60}deg)">
-			<g transform="scale({MARK / 100})">
-				<g mask="url(#core-{id})">
-					{#each [0, 60, 120, 180, 240, 300] as angle (angle)}
-						<rect
-							x="37"
-							y="0"
-							width="26"
-							height="62"
-							rx="13"
-							fill="url(#petal-{id})"
-							transform="rotate({angle} 50 50)"
-						/>
-					{/each}
-				</g>
-				<circle cx="50" cy="50" r="7" fill="currentColor" fill-opacity="0.9" />
-			</g>
+		<g class="petals" style:transform="rotate({nudge * 120}deg)">
+			<Mark size={MARK} />
 		</g>
 	</g>
 </svg>
