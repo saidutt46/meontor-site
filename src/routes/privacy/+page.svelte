@@ -6,15 +6,14 @@
   Proprietary and confidential.
 -->
 <!--
-  Every claim here was checked against the app's code on 2026-09-26: no networking
-  code; HealthKit toShare: [] with five read types; PrivacyInfo.xcprivacy declares no
-  tracking and no collected data; LAContext app lock; Export in Settings, Privacy.
-  Re-checked 2026-10-05 at the app's v1 candidate (ad89216): iOS 26, iPhone and iPad
-  (TARGETED_DEVICE_FAMILY 1,2), no iCloud entitlement; Export is a JSON file of
-  activities and entries (PrivacyView.swift); the lock names Face ID, Touch ID, Optic ID
-  or the passcode and covers the app in the switcher (AppLock.swift); feedback is a
-  mailto: the person sends (FeedbackSheet.swift, AppCopy.Notifications.feedbackAddress).
-  Re-check before changing a claim.
+  Every sentence here was checked against the app's code at main f1505c4 (build 20) on
+  2026-11-03; the proof table is in .orchestration/runs/20261104T020204Z-report.md.
+  No networking code, CloudKit or third-party package; HealthKit toShare: [] with five
+  read types, 90 days on turning a metric on (HealthSync.historyDays); the on-device model
+  gets the day phase and tone for a thought (FoundationModelsMentor.swift), and a finding's
+  line and facts for its note (MentorInstructions.findingNotePrompt, FindingNoteLine.swift),
+  which can hold sleep and step figures; Withheld keeps Habits and a set of symptoms out.
+  Export is activities, events and spans (PrivacyView.swift). Re-check before changing a claim.
 -->
 <script lang="ts">
 	import SeoHead from '$lib/components/SeoHead.svelte';
@@ -24,23 +23,30 @@
 
 <SeoHead
 	title="Privacy Policy · Meontor"
-	description="Meontor keeps everything on your device: no account, no server, no tracking. Apple Health is optional, and Meontor never writes to it."
+	description="Meontor stores your log on your device: no account, no server, no tracking. Apple Health is optional, and Meontor never writes to it."
 	path="/privacy"
 	imageAlt="Meontor privacy policy"
 />
 
 <LegalPage
 	title="Privacy Policy"
-	intro="Meontor is an app for iPhone and iPad for logging your day and reflecting on it. It has no account, no server and no tracking. Everything you log stays on your device."
-	effective="October 5, 2026"
+	intro="Meontor is an app for iPhone and iPad for logging your day and seeing the patterns in it. It has no account, no server and no tracking. What you log is stored on your device, and Meontor sends none of it anywhere."
+	effective="November 3, 2026"
 >
 	<section>
 		<h2>1. What Meontor keeps, and where</h2>
 		<ul>
 			<li>
-				The activities you log, their times, and any details you add: amounts, notes, ratings.
+				The activities you log, their times, and any details you add: amounts, notes, ratings and
+				your answers to the evening question.
 			</li>
-			<li>Your roles, categories and settings, and the reflections the Mentor writes.</li>
+			<li>Your activities, roles, categories and settings.</li>
+			<li>If you turn on Apple Health, a copy of the readings you chose (see section 4).</li>
+			<li>
+				What the app works out from your log: statistics for its suggestions, the day's thoughts, a
+				saved copy of what the widget and Now show, and which Mentor findings you have seen or
+				hidden, with any reason you gave.
+			</li>
 		</ul>
 		<p>
 			All of it is stored on your device, in storage shared by the app and its widgets. It is not
@@ -57,22 +63,44 @@
 			identifiers, usage data or location.
 		</p>
 		<p>
-			The one exception is a message you choose to send. Now and then, at most once a month, the app
-			may ask how Meontor is going; this is one of its notifications, and you can switch it off like
-			the rest. Send by email opens Mail with a message to us that you read and send yourself; the
-			app sends nothing on its own. If you write to us, from the app or otherwise, we receive your
-			message and your email address, and use them to reply and for nothing else.
+			The one exception is a message you choose to send. Now and then, at most once every 30 days
+			and never in your first two weeks, the app may ask how Meontor is going; this is one of its
+			notifications, and you can switch it off like the rest. Send by email opens your email app
+			with a message to us that holds your rating, your words and the app's version. You read it and
+			send it yourself; the app sends nothing on its own. If you write to us, from the app or
+			otherwise, we receive your message and your email address, and use them to reply and for
+			nothing else.
 		</p>
 	</section>
 
 	<section>
 		<h2>3. Apple Intelligence</h2>
 		<p>
-			The Mentor's reflections and thoughts are written by Apple Intelligence on your device, from a
-			summary of your day. They are not sent to any AI service. If Apple Intelligence isn't
-			available, Meontor writes them on device without it, and says so. Habits and symptoms (such as
-			smoking, alcohol, betting or headaches) are never shown to a language model, not even Apple's
-			on-device one: the Mentor states them plainly itself.
+			Meontor finds patterns in your log itself, with fixed rules in the app. It does not use a
+			language model for that. On a device with Apple Intelligence turned on, Apple's on-device
+			model writes two small things. Neither is sent to any AI service.
+		</p>
+		<ul>
+			<li>
+				The day's thought, on Now and the widget. The model is given the time of day and your chosen
+				tone, and nothing from your log.
+			</li>
+			<li>
+				One sentence in a finding's details, when you open them. The model is given that finding's
+				line and the short facts under it. These can include the activity's name, in your own words
+				if you made it, its usual time and length, how many days it held, other activities on your
+				best-rated days, and sleep and step figures from Apple Health. Your notes are not included.
+				The sentence is held in memory and not saved.
+			</li>
+		</ul>
+		<p>
+			If Apple Intelligence is off or unavailable, or its line does not pass the app's checks,
+			Meontor shows a line of its own instead. Settings shows whether Apple Intelligence is on.
+		</p>
+		<p>
+			A set of activities is kept away from the model: everything in the Habits category, such as
+			smoking, alcohol and betting, and a set of symptoms, such as headaches. An activity you make
+			yourself is kept away too if you put it in Habits.
 		</p>
 	</section>
 
@@ -90,17 +118,29 @@
 			<li>Workouts</li>
 		</ul>
 		<p>
-			<strong>Meontor never writes to Health.</strong> Health data is used to reflect on your day inside
-			the app. It never leaves your device and is never used for advertising. You can turn access off
-			at any time in Meontor's Settings or in the Health app.
+			When you turn a metric on, Meontor reads its last 90 days. After that, it reads the latest
+			week when you open the app, at most every 30 minutes. It keeps a copy of these readings on
+			your device.
+		</p>
+		<p>
+			<strong>Meontor never writes to Health.</strong> It uses Health data to show your readings and find
+			patterns inside the app. Meontor never sends Health data anywhere and never uses it for advertising.
+			Exports leave it out. Sleep and step figures can reach Apple's on-device model, as section 3 says,
+			and the copy can be part of your device's backups, as section 8 says.
+		</p>
+		<p>
+			You can turn a metric off at any time in Meontor's Settings, which also deletes the copy of
+			it. You can also remove Meontor's access in the Health app.
 		</p>
 	</section>
 
 	<section>
-		<h2>5. Siri, widgets, Controls and Live Activities</h2>
+		<h2>5. Siri, widgets, Controls, Live Activities and notifications</h2>
 		<p>
-			These are handled by iOS on your device. Requests you make to Siri are processed by Apple
-			under Apple's own privacy policy.
+			These are handled by iOS on your device. They can show parts of your log on the Home Screen
+			and Lock Screen, where anyone holding your device can see them. Notifications are planned on
+			your device, with no server. Requests you make to Siri are processed by Apple under Apple's
+			own privacy policy.
 		</p>
 	</section>
 
@@ -108,8 +148,9 @@
 		<h2>6. App lock</h2>
 		<p>
 			App lock is optional. Face ID, Touch ID or your passcode is checked by iOS, and Meontor never
-			sees your biometric data. While it is locked, nothing of your log shows, not even in the app
-			switcher.
+			sees your biometric data. While it is locked, the app shows nothing of your log, not even in
+			the app switcher. The lock covers the app: widgets, Live Activities and notifications are
+			outside it. If your device has no passcode set, the app opens normally.
 		</p>
 	</section>
 
@@ -117,7 +158,7 @@
 		<h2>7. Analytics, advertising and tracking</h2>
 		<p>
 			None. Meontor has no analytics, advertising or third-party code, and it does not track you
-			across apps or websites. If you choose to share analytics with app developers in your iPhone's
+			across apps or websites. If you choose to share analytics with app developers in your device's
 			settings, Apple may share crash reports with us.
 		</p>
 	</section>
@@ -125,9 +166,19 @@
 	<section>
 		<h2>8. Your control</h2>
 		<p>
-			You can export your activities and entries, or erase everything, from Settings, then Privacy,
-			in the app. Deleting the app deletes its data. Backups follow your iCloud or computer backup
-			settings, as they do for any app.
+			You can export your activities and entries as a JSON file, or erase your data, from Settings,
+			then Privacy, in the app. The export leaves out Apple Health data, roles and categories.
+		</p>
+		<p>
+			Erase everything removes every entry, your roles and categories, your marks on findings and
+			anything copied from Health, then restores the starting set of activities. It keeps settings
+			such as your tone and which Health metrics are on, so Health readings return on the next read
+			unless you turn those metrics off.
+		</p>
+		<p>
+			Deleting the app deletes its data from that device. Backups follow your iCloud or computer
+			backup settings, as they do for any app, so a backup can hold your log and the copy of your
+			Health readings.
 		</p>
 	</section>
 
