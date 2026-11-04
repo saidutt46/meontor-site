@@ -73,11 +73,11 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'Does the Mentor use AI?',
-				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model writes two small things. One is the day's thought, from the time of day and your tone. The other is one sentence in a finding's details, from your tone, a general line of ours and that finding's own facts. Those facts can name other activities and give sleep and step figures from Apple Health. Nothing is sent to any AI service. Activities in Habits and a set of symptoms, such as headaches, are kept away from the model. Without Apple Intelligence, Meontor shows lines of its own."
+				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model writes two small things. One is the day's thought, from the time of day and your tone. The other is one sentence in a finding's details. It comes from your tone, a general line of ours and that finding's own facts. Those facts can name other activities and give sleep and step figures from Apple Health. Nothing is sent to any AI service. Activities in Habits and a set of symptoms, such as headaches, are kept away from the model. Without Apple Intelligence, Meontor shows lines of its own."
 			},
 			{
 				q: 'Does the Mentor judge my days?',
-				a: 'No. It never compares you with other people, and it never points out a decline. When it talks about change, it talks about things that are new, came back, moved earlier or later, or set a record.'
+				a: 'No. It never compares you with other people, and it never points out a decline. When it talks about change, it names things that are new, came back, moved earlier or later, or set a record.'
 			}
 		]
 	},
@@ -94,7 +94,7 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'Can I export or erase my data?',
-				a: "Yes, from Settings, then Privacy. Export saves your activities and each entry's time, value, note and where you logged it, as a JSON file you choose where to keep. It leaves out Apple Health data, roles, categories, settings, marks on findings, and details such as calories or what kind of coffee. Erase everything removes your entries, roles, categories and anything copied from Health. It then restores the starting activities. Settings such as your tone stay. A saved copy of the Mentor's latest findings can stay until the app next works them out."
+				a: "Yes, from Settings, then Privacy. Export saves your activities and each entry's time, value, note and where you logged it. The JSON file goes where you choose. It leaves out Apple Health data, roles, categories, settings, marks on findings, and details such as calories or what kind of coffee. Erase everything removes your entries, roles, categories and anything copied from Health. It then restores the starting activities. Settings such as your tone stay. A saved copy of the Mentor's latest findings can stay until the app next works them out."
 			},
 			{
 				q: 'Can I lock Meontor?',
