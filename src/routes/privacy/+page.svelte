@@ -120,8 +120,8 @@
 		<p>
 			If Apple Intelligence is off or unavailable, Meontor shows a line of its own instead. It does
 			the same if the model's line does not pass the app's checks. The app can then keep a short
-			reason on your device, which can quote a few words of that line, until a later line passes or
-			you erase your data. Settings shows whether Apple Intelligence is on.
+			reason on your device, which can quote a few words of that line, until a later line of the
+			same kind passes or you erase your data. Settings shows whether Apple Intelligence is on.
 		</p>
 		<p>
 			A set of activities is kept away from the model: everything in the Habits category, such as
@@ -149,8 +149,8 @@
 			<li>Workouts</li>
 		</ul>
 		<p>
-			Sleep and steps show on the Now screen and in your week, and the Mentor can notice them.
-			Workouts show in the Timeline.
+			Sleep and steps show on the Now screen and in your weekly recap, and the Mentor can notice
+			them. Workouts show in the Timeline.
 		</p>
 		<p>
 			When you turn a metric on, Meontor reads its last 90 days. After that, it reads the latest
@@ -202,20 +202,21 @@
 		<h2>8. Your control</h2>
 		<p>
 			You can export your data as a JSON file, or erase it, from Settings, then Privacy, in the app.
-			The export holds your entries, with their times, values, notes, details such as calories or
-			what kind of coffee, and where you logged them. It holds your activities and their settings,
-			such as units and favourites, your categories, with their colour and what time in them gives
-			you, and your roles. It leaves out Apple Health data, what the app works out from your log,
-			such as statistics and findings, the day's thoughts, your marks on findings, and the app's own
-			settings, such as tone, app lock and notifications.
+			The export holds your entries, with their times, values, notes and where you logged them. It
+			includes details such as calories or what kind of coffee. It holds your activities and their
+			settings, such as units and favourites. It holds your categories, with their colour and your
+			note on what time in them gives you. It holds your roles too. It leaves out Apple Health data
+			and your marks on findings. It leaves out the day's thoughts and what the app works out from
+			your log, such as statistics and findings. It also leaves out the app's own settings, such as
+			tone, app lock and notifications.
 		</p>
 		<p>
-			Erase everything removes every entry, the roles, categories and activities you made, your
-			favourites, your marks on findings and anything copied from Health. It also removes the day's
-			thoughts, the app's statistics, the saved copy of the Mentor's latest findings, the record of
-			findings a notification has told you about, and the short reasons from section 3.
-			Notifications waiting or already delivered go too. It then restores the starting set of
-			activities, categories and roles, and reloads widgets and Controls.
+			Erase everything removes every entry and the roles, categories and activities you made. It
+			removes your favourites, your marks on findings and anything copied from Health. It also
+			removes the day's thoughts and the app's statistics. The saved copy of the Mentor's latest
+			findings goes too. So do the record of findings a notification has told you about, the short
+			reasons from section 3, and notifications waiting or already delivered. It then restores the
+			starting set of activities, categories and roles, and reloads widgets and Controls.
 		</p>
 		<p>
 			It keeps settings such as your tone, your notification switches and which Health metrics are
