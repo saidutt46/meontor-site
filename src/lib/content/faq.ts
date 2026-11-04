@@ -19,7 +19,7 @@ export const FAQ: FaqTopic[] = [
 			{ q: 'Is there an account?', a: 'No. There is no sign-in anywhere in the app.' },
 			{
 				q: 'Will Meontor send me notifications?',
-				a: 'If you want them, there are five kinds. A question each evening, which you can answer from the notification or in the app. A short recap on the last evening of your week. A gentle check-in in a part of the day you usually log. A note when the Mentor finds something new. And now and then, a question about how Meontor is going. There are never more than two a day. Each kind has its own switch in Settings, then Notifications. They are planned on your device; there is no server.'
+				a: 'If you want them, there are five kinds. A question each evening, which you can answer from the notification or in the app. On the last evening of your week, a short recap takes its place. The evening question is skipped once you have answered it, or if it is past 3 pm and you have logged nothing today. A gentle check-in, at most one a day, in a part of the day you usually log. A note when the Mentor finds something new, at most once a week. And now and then, a question about how Meontor is going. There are never more than two a day. Each kind has its own switch in Settings, then Notifications. They are planned on your device; there is no server.'
 			},
 			{
 				q: 'How do I add the widget?',
@@ -57,7 +57,7 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: 'What does the Mentor do?',
-				a: "The Mentor looks across your weeks and shows what one day cannot: your usual times, what has changed, and what your best days have in common. Each pattern it shows is a finding. A finding's card can show a chart of the days it rests on, and a tap opens more about it. When it is not sure, it shows nothing."
+				a: "The Mentor looks across your weeks and shows what one day cannot: your usual times, what has changed, and what your good days have in common. Each pattern it shows is a finding. A finding's card can show a chart of the days it rests on, and a tap opens more about it. When it is not sure, it shows nothing."
 			},
 			{
 				q: 'Why does the Mentor show nothing yet?',
@@ -74,6 +74,10 @@ export const FAQ: FaqTopic[] = [
 			{
 				q: 'Does the Mentor use AI?',
 				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model writes two small things. One is the day's thought, from the time of day and your tone. The other is one sentence in a finding's details. It comes from your tone, a general line of ours and that finding's own facts. Those facts can name other activities and give sleep and step figures from Apple Health. Nothing is sent to any AI service. Activities in Habits and a set of symptoms, such as headaches, are kept away from the model. Without Apple Intelligence, Meontor shows lines of its own."
+			},
+			{
+				q: 'What does "Written on device" mean?',
+				a: "It shows under the sentence in a finding's details when Apple's on-device model wrote that sentence. Without it, the sentence is a line of ours. Nothing is sent to any AI service either way."
 			},
 			{
 				q: 'Does the Mentor judge my days?',
@@ -94,7 +98,7 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'Can I export or erase my data?',
-				a: "Yes, from Settings, then Privacy. Export saves your activities and each entry's time, value, note and where you logged it. The JSON file goes where you choose. It leaves out Apple Health data, roles, categories, settings, marks on findings, and details such as calories or what kind of coffee. Erase everything removes your entries, roles, categories and anything copied from Health. It then restores the starting activities. Settings such as your tone stay. A saved copy of the Mentor's latest findings can stay until the app next works them out."
+				a: "Yes, from Settings, then Privacy. Export saves your activities and each entry's time, value, note and where you logged it. The JSON file goes where you choose. It leaves out Apple Health data, roles, categories, settings, marks on findings, and details such as calories or what kind of coffee. Erase everything removes your entries, roles, categories and anything copied from Health. It then restores the starting activities. Settings such as your tone stay, and so do your Health metrics, so readings come back on the next read unless you turn them off. A saved copy of the Mentor's latest findings can stay until the app next works them out."
 			},
 			{
 				q: 'Can I lock Meontor?',
