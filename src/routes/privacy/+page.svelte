@@ -43,34 +43,42 @@
 			<li>Your activities, roles, categories and settings.</li>
 			<li>If you turn on Apple Health, a copy of the readings you chose (see section 4).</li>
 			<li>
-				What the app works out from your log: statistics for its suggestions, the day's thoughts, a
-				saved copy of what the widget and Now show, and which Mentor findings you have seen or
-				hidden, with any reason you gave.
+				What the app works out from your log: statistics for its suggestions, the day's thoughts,
+				and a saved copy of what the widget and the Now screen show.
+			</li>
+			<li>
+				Which findings you have seen or hidden in the Mentor, with any reason you gave. The Mentor
+				is the part of the app that shows patterns in your log. Each pattern is a finding.
 			</li>
 		</ul>
 		<p>
-			All of it is stored on your device, in storage shared by the app and its widgets. It is not
-			sent to us or to anyone else. Meontor contains no code that sends it over the internet, and it
-			has no sync: your iPhone and iPad each keep their own log. If you export your data, the file
-			goes where you choose to put it.
+			All of it is stored on your device, mostly in storage shared by the app and its widgets. It is
+			not sent to us or to anyone else. Meontor contains no code that sends it over the internet,
+			and it has no sync: your iPhone and iPad each keep their own log. If you export your data, the
+			file goes where you choose to put it.
 		</p>
 	</section>
 
 	<section>
 		<h2>2. What we collect</h2>
 		<p>
-			Nothing. We have no server to send it to. We don't collect names, email addresses,
-			identifiers, usage data or location.
+			The app collects nothing. We have no server to send it to. We don't collect names, email
+			addresses, identifiers, usage data or location.
 		</p>
 		<p>
-			The one exception is a message you choose to send. Now and then, at most once every 30 days
-			and never in your first two weeks, the app may ask how Meontor is going; this is one of its
-			notifications, and you can switch it off like the rest. Send by email opens your email app
-			with a message to us that holds your rating, your words and the app's version. You read it and
-			send it yourself; the app sends nothing on its own. If you write to us, from the app or
-			otherwise, we receive your message and your email address, and use them to reply and for
-			nothing else.
+			The one exception in the app is a message you choose to send. Now and then the app may ask how
+			Meontor is going. It asks at most once every 30 days, and never in your first two weeks. This
+			is one of its notifications, and you can switch it off like the rest.
 		</p>
+		<p>
+			Send by email opens your email app with a message to us. It holds your rating, your words and
+			the app's version. You read it and send it yourself; the app sends nothing on its own.
+		</p>
+		<p>
+			If you write to us, from the app or otherwise, we receive your message and your email address.
+			We use them to reply and to improve Meontor, and for nothing else.
+		</p>
+		<p>Section 7 covers crash reports, and section 9 covers this website.</p>
 	</section>
 
 	<section>
@@ -82,20 +90,23 @@
 		</p>
 		<ul>
 			<li>
-				The day's thought, on Now and the widget. The model is given the time of day and your chosen
-				tone, and nothing from your log.
+				The day's thought, on the Now screen and the widget. The model is given the time of day and
+				your chosen tone, and nothing from your log.
 			</li>
 			<li>
-				One sentence in a finding's details, when you open them. The model is given that finding's
-				line and the short facts under it. These can include the activity's name, in your own words
-				if you made it, its usual time and length, how many days it held, other activities on your
-				best-rated days, and sleep and step figures from Apple Health. Your notes are not included.
-				The sentence is held in memory and not saved.
+				One sentence in a finding's details, when you open them. The model is given your chosen tone
+				and a general line written by us. It also gets that finding's line and the short facts under
+				it. These facts can name the activity, in your own words if you made it. They can say how
+				often it happens and its usual time and length. They can say when you first logged it and
+				how many times in all. They can name other activities that fall on the same days, such as
+				your best-rated days or a certain weekday. They can also give sleep and step figures from
+				Apple Health. Your notes are not included. The sentence is held in memory and not saved.
 			</li>
 		</ul>
 		<p>
-			If Apple Intelligence is off or unavailable, or its line does not pass the app's checks,
-			Meontor shows a line of its own instead. Settings shows whether Apple Intelligence is on.
+			If Apple Intelligence is off or unavailable, Meontor shows a line of its own instead. It does
+			the same if the model's line does not pass the app's checks. Settings shows whether Apple
+			Intelligence is on.
 		</p>
 		<p>
 			A set of activities is kept away from the model: everything in the Habits category, such as
@@ -125,8 +136,8 @@
 		<p>
 			<strong>Meontor never writes to Health.</strong> It uses Health data to show your readings and find
 			patterns inside the app. Meontor never sends Health data anywhere and never uses it for advertising.
-			Exports leave it out. Sleep and step figures can reach Apple's on-device model, as section 3 says,
-			and the copy can be part of your device's backups, as section 8 says.
+			Exports leave it out. Sleep and step figures can reach Apple's on-device model, as section 3 says.
+			The copy can also be part of your device's backups, as section 8 says.
 		</p>
 		<p>
 			You can turn a metric off at any time in Meontor's Settings, which also deletes the copy of
@@ -138,7 +149,7 @@
 		<h2>5. Siri, widgets, Controls, Live Activities and notifications</h2>
 		<p>
 			These are handled by iOS on your device. They can show parts of your log on the Home Screen
-			and Lock Screen, where anyone holding your device can see them. Notifications are planned on
+			and Lock Screen. Anyone holding your device can see them there. Notifications are planned on
 			your device, with no server. Requests you make to Siri are processed by Apple under Apple's
 			own privacy policy.
 		</p>
@@ -166,18 +177,25 @@
 	<section>
 		<h2>8. Your control</h2>
 		<p>
-			You can export your activities and entries as a JSON file, or erase your data, from Settings,
-			then Privacy, in the app. The export leaves out Apple Health data, roles and categories.
+			You can export your data as a JSON file, or erase it, from Settings, then Privacy, in the app.
+			The export holds your activities and each entry's time, value, note and where you logged it.
+			Nothing else goes in it: no Apple Health data, roles, categories, settings or marks on
+			findings, and no details such as calories or what kind of coffee.
 		</p>
 		<p>
 			Erase everything removes every entry, your roles and categories, your marks on findings and
-			anything copied from Health, then restores the starting set of activities. It keeps settings
-			such as your tone and which Health metrics are on, so Health readings return on the next read
-			unless you turn those metrics off.
+			anything copied from Health. It then restores the starting set of activities. It keeps
+			settings such as your tone and which Health metrics are on. So Health readings return on the
+			next read, unless you turn those metrics off.
+		</p>
+		<p>
+			A saved copy of the Mentor's latest findings can stay until the app next works them out. It
+			does that when you open the Mentor, or on the next day you open the Now screen. A short record
+			of the findings a notification has announced also stays.
 		</p>
 		<p>
 			Deleting the app deletes its data from that device. Backups follow your iCloud or computer
-			backup settings, as they do for any app, so a backup can hold your log and the copy of your
+			backup settings, as they do for any app. So a backup can hold your log and the copy of your
 			Health readings.
 		</p>
 	</section>
@@ -186,7 +204,7 @@
 		<h2>9. This website</h2>
 		<p>
 			This website sets no cookies and loads nothing from other companies. It counts page views with
-			Vercel Web Analytics, which runs from this site's own address, uses no cookies and does not
+			Vercel Web Analytics. This runs from this site's own address, uses no cookies and does not
 			identify you. Our host, Vercel, may keep standard server logs, such as IP addresses, for
 			security.
 		</p>
@@ -194,7 +212,7 @@
 
 	<section>
 		<h2>10. Children</h2>
-		<p>Meontor is not directed at children under 13, and it collects nothing from anyone.</p>
+		<p>Meontor is not directed at children under 13, and the app collects nothing from anyone.</p>
 	</section>
 
 	<section>
