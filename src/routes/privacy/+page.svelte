@@ -15,9 +15,10 @@
   (FoundationModelsMentor.swift), and a finding's line and facts for its note
   (MentorInstructions.findingNotePrompt, FindingNoteWriter.swift, FindingNoteLine.swift), which
   can hold sleep and step figures; Withheld and SeedCatalog.privateKeys keep Habits, a set of
-  symptoms and four starting activities out. Export: DataExport.swift. Erase: StoreReset.swift,
-  PrivacyView.swift, MentorHeadlineStore.swift, NotificationPreferences.forgetLog. Re-check
-  before changing a claim.
+  symptoms and four starting activities out. Export: DataExport.swift (Gift is five fixed
+  choices). Erase: StoreReset.swift, PrivacyView.swift (erase(), MentorDiagnostics.clearAll),
+  MentorHeadline.swift (the key), NotificationPreferences.forgetLog. Re-check before changing a
+  claim.
 -->
 <script lang="ts">
 	import SeoHead from '$lib/components/SeoHead.svelte';
@@ -56,8 +57,7 @@
 				notification has told you about. Erase everything removes both, as section 8 says.
 			</li>
 			<li>
-				If a line from Apple's on-device model does not pass the app's checks, a short reason why,
-				as section 3 says.
+				When a line from Apple's on-device model is not used, a short reason why, as section 3 says.
 			</li>
 			<li>
 				Which findings you have seen or hidden in the Mentor, with any reason you gave. The Mentor
@@ -119,9 +119,10 @@
 		</ul>
 		<p>
 			If Apple Intelligence is off or unavailable, Meontor shows a line of its own instead. It does
-			the same if the model's line does not pass the app's checks. The app can then keep a short
-			reason on your device, which can quote a few words of that line, until a later line of the
-			same kind passes or you erase your data. Settings shows whether Apple Intelligence is on.
+			the same if the model times out, errors or writes a line that does not pass the app's checks.
+			The app then keeps a short reason on your device. The reason can name an activity or quote a
+			few words of the line. It stays until it is replaced or you erase your data. Settings shows
+			whether Apple Intelligence is on.
 		</p>
 		<p>
 			A set of activities is kept away from the model: everything in the Habits category, such as
@@ -131,9 +132,13 @@
 		</p>
 		<p>
 			These activities are never named in a finding, a weekly recap, a finding notification or a
-			check-in button, and the widget's line about the last thing you logged leaves them out. Pain,
-			Stress, Medication and Therapy can still be suggested to you, so their names can show on a
-			suggestion in the app, on a widget or on a Control.
+			check-in button, and the widget's line about the last thing you logged leaves them out.
+		</p>
+		<p>
+			Their names can still show in two ways. Pain, Stress, Medication and Therapy can be suggested
+			to you, so their names can show on a suggestion in the app, on a widget or on a Control. If
+			you pin an activity from the list above, it can be suggested too. And if you start a stretch
+			of any activity, its name shows on the widget and the Lock Screen while the stretch runs.
 		</p>
 	</section>
 
@@ -202,27 +207,51 @@
 		<h2>8. Your control</h2>
 		<p>
 			You can export your data as a JSON file, or erase it, from Settings, then Privacy, in the app.
-			The export holds your entries, with their times, values, notes and where you logged them. It
-			includes details such as calories or what kind of coffee. It holds your activities and their
-			settings, such as units and favourites. It holds your categories, with their colour and your
-			note on what time in them gives you. It holds your roles too. It leaves out Apple Health data
-			and your marks on findings. It leaves out the day's thoughts and what the app works out from
-			your log, such as statistics and findings. It also leaves out the app's own settings, such as
-			tone, app lock and notifications.
 		</p>
+		<p>The export holds:</p>
+		<ul>
+			<li>
+				Your entries, with their times, values, notes and where you logged them, and details such as
+				calories or what kind of coffee.
+			</li>
+			<li>Your activities and their settings, such as units and favourites.</li>
+			<li>
+				Your categories, with their colour and what time in them gives you, one of a few set
+				choices.
+			</li>
+			<li>Your roles.</li>
+		</ul>
+		<p>The export leaves out:</p>
+		<ul>
+			<li>Apple Health data and your marks on findings.</li>
+			<li>
+				The day's thoughts, and what the app works out from your log, such as statistics and
+				findings.
+			</li>
+			<li>The app's own settings, such as tone, app lock and notifications.</li>
+		</ul>
+		<p>Erase everything removes:</p>
+		<ul>
+			<li>Every entry, and the roles, categories and activities you made.</li>
+			<li>Your favourites, your marks on findings and anything copied from Health.</li>
+			<li>The day's thoughts and the app's statistics.</li>
+			<li>The saved copy of the Mentor's latest findings.</li>
+			<li>The record of findings a notification has told you about.</li>
+			<li>The short reasons from section 3.</li>
+			<li>Notifications waiting or already delivered.</li>
+		</ul>
 		<p>
-			Erase everything removes every entry and the roles, categories and activities you made. It
-			removes your favourites, your marks on findings and anything copied from Health. It also
-			removes the day's thoughts and the app's statistics. The saved copy of the Mentor's latest
-			findings goes too. So do the record of findings a notification has told you about, the short
-			reasons from section 3, and notifications waiting or already delivered. It then restores the
-			starting set of activities, categories and roles, and reloads widgets and Controls.
+			It then restores the starting set of activities, categories and roles, and reloads widgets and
+			Controls.
 		</p>
-		<p>
-			It keeps settings such as your tone, your notification switches and which Health metrics are
-			on. So Health readings return on the next read, unless you turn those metrics off, and
-			notifications are planned again from the empty log.
-		</p>
+		<p>Erase everything keeps:</p>
+		<ul>
+			<li>Settings such as your tone and your notification switches.</li>
+			<li>
+				Which Health metrics are on. So Health readings return on the next read, unless you turn
+				those metrics off, and notifications are planned again from the empty log.
+			</li>
+		</ul>
 		<p>
 			Deleting the app deletes its data from that device. Backups follow your iCloud or computer
 			backup settings, as they do for any app. So a backup can hold your log and the copy of your

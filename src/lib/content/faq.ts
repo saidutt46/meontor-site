@@ -19,7 +19,7 @@ export const FAQ: FaqTopic[] = [
 			{ q: 'Is there an account?', a: 'No. There is no sign-in anywhere in the app.' },
 			{
 				q: 'Will Meontor send me notifications?',
-				a: "If you want them, there are five kinds. A question each evening, which you can answer from the notification or in the app. On the last evening of your week, a short recap takes its place if its switch is on. The question is skipped once you have answered it. If you have logged nothing today by 3 pm, that evening's notification, question or recap, can be skipped too. A gentle check-in, at most one a day, in a part of the day you usually log. A note when the Mentor finds something new, at most once a week. And now and then, a question about how Meontor is going. There are never more than two a day. Each kind has its own switch in Settings, then Notifications. They are planned on your device; there is no server."
+				a: "If you want them, there are five kinds. A question each evening, which you can answer from the notification or in the app. On the last evening of your week, a short recap takes its place if its switch is on. The question is skipped once you have answered it. If you have logged nothing today by 3 pm, Meontor can skip that evening's question or recap. A gentle check-in, at most one a day, in a part of the day you usually log. A note when the Mentor finds something new, at most once a week. And now and then, a question about how Meontor is going. There are never more than two a day. Each kind has its own switch in Settings, then Notifications. They are planned on your device; there is no server."
 			},
 			{
 				q: 'How do I add the widget?',
@@ -98,7 +98,7 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'Can I export or erase my data?',
-				a: "Yes, from Settings, then Privacy. Export saves a JSON file where you choose. It holds your entries with their details, your activities and their settings, your categories and your roles. It leaves out Apple Health data, what the app works out from your log, your marks on findings and the app's own settings. Erase everything removes your entries, the roles, categories and activities you made, your favourites and anything copied from Health. It also removes what the app worked out from your log, including the Mentor's saved findings. It then restores the starting set. Settings such as your tone stay, and so do your Health metrics, so readings come back on the next read unless you turn them off."
+				a: "Yes, from Settings, then Privacy. Export saves a JSON file where you choose. It holds your entries with their details, your activities and their settings, your categories and your roles. It leaves out Apple Health data, what the app works out from your log, your marks on findings and the app's own settings. Erase everything removes your entries, the roles, categories and activities you made, your favourites, your marks on findings and anything copied from Health. It also removes what the app worked out from your log, including the Mentor's saved findings. It then restores the starting set. A backup made earlier keeps its copy. Settings such as your tone stay, and so do your Health metrics, so readings come back on the next read unless you turn them off."
 			},
 			{
 				q: 'Can I lock Meontor?',
