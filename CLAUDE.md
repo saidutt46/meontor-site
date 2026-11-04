@@ -17,7 +17,7 @@ Read this file, `README.md` and the prompt you were given (from the owner or a p
 3. After every change: `pnpm check && pnpm lint && pnpm test && pnpm build && pnpm verify`. Show the owner the changed text before committing.
 4. With his approval: commit, `git push -u`, `gh pr create`, `gh pr merge --merge --delete-branch` (merge commits, no squash). Vercel deploys `main` in about a minute; check the live pages with `curl`. Stop any `pnpm preview` you started (`kill $(lsof -ti :4173)`).
 
-**State (2026-11-03):** live at https://meontor-site.vercel.app, which the App Store listing uses for `/privacy` and `/support`. The privacy page and FAQ describe the app's new Mentor (findings, not reflections) at app `7c8baae`. Do not describe the Mentor's rings or a "usual day ring": a new chart is replacing them. The home page, its screenshots, `/terms` and the README still describe the old Mentor.
+**State (2026-11-03):** live at https://meontor-site.vercel.app, which the App Store listing uses for `/privacy` and `/support`. The privacy page and FAQ describe the app's new Mentor (findings, not reflections). Do not describe the Mentor's rings or a "usual day ring": a new chart is replacing them. The home page, its screenshots, `/terms` and the README still describe the old Mentor.
 
 **Open, none started:**
 
@@ -52,7 +52,7 @@ pnpm format
 
 1. **No cookies, no third-party requests.** The CSP in `vercel.json` is `'self'` only. The one analytics is Vercel Web Analytics (owner, 2026-09-29): cookieless page views, `injectAnalytics` in `src/routes/+layout.ts`, served from this site's own address (on Vercel a project-specific path such as `/3da9b651fa253f23/script.js`, `/_vercel/insights/` in `pnpm preview`); it ignores automated browsers, so check it with a real browser. The privacy policy (§9) and the privacy band say exactly this; change them together.
 2. **Copy:** no guilt, no deficit, no comparison, no role weighing, no medical claims. Say which engine writes the Mentor ("Apple Intelligence" or "written on device").
-3. **Privacy claims** in `src/routes/privacy` and the FAQ were checked sentence by sentence against the app at `f1505c4` (build 20) on 2026-11-03, and the changed claims against `7c8baae` (Erase, Export, three Health read types, what is kept from the model) the same day; the page's header comment names the main files. Re-check the app before changing a claim.
+3. **Privacy claims** in `src/routes/privacy` and the FAQ were checked sentence by sentence against the app; the page's header comment names the app commits and main files. Re-check the app before changing a claim.
 4. **Colours** are tokens in `src/app.css` (`--canvas`, `--grouped`, `--label*`, `--separator`, `--accent`); light and dark follow `prefers-color-scheme`, with no toggle. Accent is `#4F63D9` light / `#7D94F0` dark, chosen for 4.5:1 contrast.
 5. Svelte 5 runes only. Every animation must stop under `prefers-reduced-motion`, and content must show with JS off (`.fade-in` handles both).
 6. **Git:** no commits or pushes without the owner's explicit approval. Use `gh` for GitHub.
