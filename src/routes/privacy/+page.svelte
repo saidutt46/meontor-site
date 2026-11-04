@@ -7,13 +7,14 @@
 -->
 <!--
   Every sentence here was checked against the app's code at main f1505c4 (build 20) on
-  2026-11-03; the proof table is in .orchestration/runs/20261104T020204Z-report.md.
-  No networking code, CloudKit or third-party package; HealthKit toShare: [] with five
-  read types, 90 days on turning a metric on (HealthSync.historyDays); the on-device model
-  gets the day phase and tone for a thought (FoundationModelsMentor.swift), and a finding's
-  line and facts for its note (MentorInstructions.findingNotePrompt, FindingNoteLine.swift),
-  which can hold sleep and step figures; Withheld keeps Habits and a set of symptoms out.
-  Export is activities, events and spans (PrivacyView.swift). Re-check before changing a claim.
+  2026-11-03. No networking code, CloudKit or third-party package; HealthKit toShare: [] with
+  five read types, 90 days on turning a metric on and a 7-day window after (HealthSync.swift
+  historyDays, windowDays; disable() deletes a metric's records); the on-device model gets the
+  day phase and tone for a thought (FoundationModelsMentor.swift), and a finding's line and
+  facts for its note (MentorInstructions.findingNotePrompt, FindingNoteWriter.swift,
+  FindingNoteLine.swift), which can hold sleep and step figures; Withheld keeps Habits and a
+  set of symptoms out. Export, Erase and what outlasts Erase: PrivacyView.swift,
+  MentorHeadline.swift, NotificationPreferences.swift. Re-check before changing a claim.
 -->
 <script lang="ts">
 	import SeoHead from '$lib/components/SeoHead.svelte';
@@ -47,6 +48,10 @@
 				what the widget and the Now screen show.
 			</li>
 			<li>The day's thoughts, which do not come from your log.</li>
+			<li>
+				A saved copy of the Mentor's latest findings, and a short record of the findings a
+				notification has announced. Both can outlast Erase, as section 8 says.
+			</li>
 			<li>
 				Which findings you have seen or hidden in the Mentor, with any reason you gave. The Mentor
 				is the part of the app that shows patterns in your log. Each pattern is a finding.
@@ -95,13 +100,14 @@
 				your chosen tone, and nothing from your log.
 			</li>
 			<li>
-				One sentence in a finding's details, when you open them. The model is given your chosen tone
-				and a general line written by us. It also gets that finding's line and the short facts under
-				it. These facts can name the activity, in your own words if you made it. They can say how
-				often it happens and its usual time and length. They can say when you first logged it and
-				how many times in all. They can name other activities that fall on the same days, such as
-				your best-rated days or a certain weekday. They can also give sleep and step figures from
-				Apple Health. Your notes are not included. The sentence is held in memory and not saved.
+				One sentence in a finding's details, when you open them. The note says "Written on device"
+				when the model wrote that sentence. The model is given your chosen tone and a general line
+				written by us. It also gets that finding's line and the short facts under it. These facts
+				can name the activity, in your own words if you made it. They can say how often it happens
+				and its usual time and length. They can say when you first logged it and how many times in
+				all. They can name other activities that fall on the same days, such as the days you rated
+				well or a certain weekday. They can also give sleep and step figures from Apple Health. Your
+				notes are not included. The sentence is held in memory and not saved.
 			</li>
 		</ul>
 		<p>
@@ -142,7 +148,8 @@
 		</p>
 		<p>
 			You can turn a metric off at any time in Meontor's Settings, which also deletes the copy of
-			it. You can also remove Meontor's access in the Health app.
+			it. Erase everything deletes it too. Removing Meontor's access in the Health app stops new
+			readings, but older readings stay on your device until you do one of those.
 		</p>
 	</section>
 
