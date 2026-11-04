@@ -43,9 +43,10 @@
 			<li>Your activities, roles, categories and settings.</li>
 			<li>If you turn on Apple Health, a copy of the readings you chose (see section 4).</li>
 			<li>
-				What the app works out from your log: statistics for its suggestions, the day's thoughts,
-				and a saved copy of what the widget and the Now screen show.
+				What the app works out from your log: statistics for its suggestions and a saved copy of
+				what the widget and the Now screen show.
 			</li>
+			<li>The day's thoughts, which do not come from your log.</li>
 			<li>
 				Which findings you have seen or hidden in the Mentor, with any reason you gave. The Mentor
 				is the part of the app that shows patterns in your log. Each pattern is a finding.
