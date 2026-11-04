@@ -6,15 +6,18 @@
   Proprietary and confidential.
 -->
 <!--
-  Every sentence here was checked against the app's code at main f1505c4 (build 20) on
-  2026-11-03. No networking code, CloudKit or third-party package; HealthKit toShare: [] with
-  five read types, 90 days on turning a metric on and a 7-day window after (HealthSync.swift
-  historyDays, windowDays; disable() deletes a metric's records); the on-device model gets the
-  day phase and tone for a thought (FoundationModelsMentor.swift), and a finding's line and
-  facts for its note (MentorInstructions.findingNotePrompt, FindingNoteWriter.swift,
-  FindingNoteLine.swift), which can hold sleep and step figures; Withheld keeps Habits and a
-  set of symptoms out. Export, Erase and what outlasts Erase: PrivacyView.swift,
-  MentorHeadline.swift, NotificationPreferences.swift. Re-check before changing a claim.
+  Every changed sentence here was checked against the app's code at main 7c8baae on 2026-11-03;
+  the rest at f1505c4 (build 20), with the diff between them read. No networking code, CloudKit
+  or third-party package; HealthKit toShare: [] with three read types (HealthReader.swift),
+  90 days on turning a metric on and a 7-day window after (HealthSync.swift historyDays,
+  windowDays; disable() deletes a metric's records; removeRetiredMetrics deletes what older
+  installs kept); the on-device model gets the day phase and tone for a thought
+  (FoundationModelsMentor.swift), and a finding's line and facts for its note
+  (MentorInstructions.findingNotePrompt, FindingNoteWriter.swift, FindingNoteLine.swift), which
+  can hold sleep and step figures; Withheld and SeedCatalog.privateKeys keep Habits, a set of
+  symptoms and four starting activities out. Export: DataExport.swift. Erase: StoreReset.swift,
+  PrivacyView.swift, MentorHeadlineStore.swift, NotificationPreferences.forgetLog. Re-check
+  before changing a claim.
 -->
 <script lang="ts">
 	import SeoHead from '$lib/components/SeoHead.svelte';
@@ -50,7 +53,11 @@
 			<li>The day's thoughts, which do not come from your log.</li>
 			<li>
 				A saved copy of the Mentor's latest findings, and a short record of the findings a
-				notification has announced. Both can outlast Erase, as section 8 says.
+				notification has told you about. Erase everything removes both, as section 8 says.
+			</li>
+			<li>
+				If a line from Apple's on-device model does not pass the app's checks, a short reason why,
+				as section 3 says.
 			</li>
 			<li>
 				Which findings you have seen or hidden in the Mentor, with any reason you gave. The Mentor
@@ -112,13 +119,21 @@
 		</ul>
 		<p>
 			If Apple Intelligence is off or unavailable, Meontor shows a line of its own instead. It does
-			the same if the model's line does not pass the app's checks. Settings shows whether Apple
-			Intelligence is on.
+			the same if the model's line does not pass the app's checks. The app can then keep a short
+			reason on your device, which can quote a few words of that line, until a later line passes or
+			you erase your data. Settings shows whether Apple Intelligence is on.
 		</p>
 		<p>
 			A set of activities is kept away from the model: everything in the Habits category, such as
-			smoking, alcohol and betting, and a set of symptoms, such as headaches. An activity you make
-			yourself is kept away too if you put it in Habits.
+			smoking, alcohol and betting; a set of symptoms, such as headaches; and the starting
+			activities Pain, Stress, Medication and Therapy. An activity you make yourself is kept away
+			too if you put it in Habits.
+		</p>
+		<p>
+			These activities are never named in a finding, a weekly recap, a finding notification or a
+			check-in button, and the widget's line about the last thing you logged leaves them out. Pain,
+			Stress, Medication and Therapy can still be suggested to you, so their names can show on a
+			suggestion in the app, on a widget or on a Control.
 		</p>
 	</section>
 
@@ -131,20 +146,21 @@
 		<ul>
 			<li>Sleep</li>
 			<li>Steps</li>
-			<li>Active energy</li>
-			<li>Resting heart rate</li>
 			<li>Workouts</li>
 		</ul>
+		<p>
+			Sleep and steps show on the Now screen and in your week, and the Mentor can notice them.
+			Workouts show in the Timeline.
+		</p>
 		<p>
 			When you turn a metric on, Meontor reads its last 90 days. After that, it reads the latest
 			week when you open the app, at most every 30 minutes. It keeps a copy of these readings on
 			your device.
 		</p>
 		<p>
-			<strong>Meontor never writes to Health.</strong> It uses Health data to show your readings and find
-			patterns inside the app. Meontor never sends Health data anywhere and never uses it for advertising.
-			Exports leave it out. Sleep and step figures can reach Apple's on-device model, as section 3 says.
-			The copy can also be part of your device's backups, as section 8 says.
+			<strong>Meontor never writes to Health.</strong> Meontor never sends Health data anywhere and never
+			uses it for advertising. Exports leave it out. Sleep and step figures can reach Apple's on-device
+			model, as section 3 says. The copy can also be part of your device's backups, as section 8 says.
 		</p>
 		<p>
 			You can turn a metric off at any time in Meontor's Settings, which also deletes the copy of
@@ -186,25 +202,30 @@
 		<h2>8. Your control</h2>
 		<p>
 			You can export your data as a JSON file, or erase it, from Settings, then Privacy, in the app.
-			The export holds your activities and each entry's time, value, note and where you logged it.
-			Nothing else goes in it: no Apple Health data, roles, categories, settings or marks on
-			findings, and no details such as calories or what kind of coffee.
+			The export holds your entries, with their times, values, notes, details such as calories or
+			what kind of coffee, and where you logged them. It holds your activities and their settings,
+			such as units and favourites, your categories, with their colour and what time in them gives
+			you, and your roles. It leaves out Apple Health data, what the app works out from your log,
+			such as statistics and findings, the day's thoughts, your marks on findings, and the app's own
+			settings, such as tone, app lock and notifications.
 		</p>
 		<p>
-			Erase everything removes every entry, your roles and categories, your marks on findings and
-			anything copied from Health. It then restores the starting set of activities. It keeps
-			settings such as your tone and which Health metrics are on. So Health readings return on the
-			next read, unless you turn those metrics off.
+			Erase everything removes every entry, the roles, categories and activities you made, your
+			favourites, your marks on findings and anything copied from Health. It also removes the day's
+			thoughts, the app's statistics, the saved copy of the Mentor's latest findings, the record of
+			findings a notification has told you about, and the short reasons from section 3.
+			Notifications waiting or already delivered go too. It then restores the starting set of
+			activities, categories and roles, and reloads widgets and Controls.
 		</p>
 		<p>
-			A saved copy of the Mentor's latest findings can stay until the app next works them out. It
-			does that when you open the Mentor, or on the next day you open the Now screen. A short record
-			of the findings a notification has announced also stays.
+			It keeps settings such as your tone, your notification switches and which Health metrics are
+			on. So Health readings return on the next read, unless you turn those metrics off, and
+			notifications are planned again from the empty log.
 		</p>
 		<p>
 			Deleting the app deletes its data from that device. Backups follow your iCloud or computer
 			backup settings, as they do for any app. So a backup can hold your log and the copy of your
-			Health readings.
+			Health readings, and a backup made earlier keeps its copy after you erase.
 		</p>
 	</section>
 
