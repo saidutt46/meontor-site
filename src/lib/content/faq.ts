@@ -19,7 +19,7 @@ export const FAQ: FaqTopic[] = [
 			{ q: 'Is there an account?', a: 'No. There is no sign-in anywhere in the app.' },
 			{
 				q: 'Will Meontor send me notifications?',
-				a: 'If you want them, there are five kinds. A question each evening, which you can answer from the notification or in the app. On the last evening of your week, a short recap takes its place. The evening question is skipped once you have answered it, or if it is past 3 pm and you have logged nothing today. A gentle check-in, at most one a day, in a part of the day you usually log. A note when the Mentor finds something new, at most once a week. And now and then, a question about how Meontor is going. There are never more than two a day. Each kind has its own switch in Settings, then Notifications. They are planned on your device; there is no server.'
+				a: "If you want them, there are five kinds. A question each evening, which you can answer from the notification or in the app. On the last evening of your week, a short recap takes its place if its switch is on. The question is skipped once you have answered it. If you have logged nothing today by 3 pm, Meontor can skip that evening's question or recap. A gentle check-in, at most one a day, in a part of the day you usually log. A note when the Mentor finds something new, at most once a week. And now and then, a question about how Meontor is going. There are never more than two a day. Each kind has its own switch in Settings, then Notifications. They are planned on your device; there is no server."
 			},
 			{
 				q: 'How do I add the widget?',
@@ -73,7 +73,7 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'Does the Mentor use AI?',
-				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model writes two small things. One is the day's thought, from the time of day and your tone. The other is one sentence in a finding's details. It comes from your tone, a general line of ours and that finding's own facts. Those facts can name other activities and give sleep and step figures from Apple Health. Nothing is sent to any AI service. Activities in Habits and a set of symptoms, such as headaches, are kept away from the model. Without Apple Intelligence, Meontor shows lines of its own."
+				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model writes two small things. One is the day's thought, from the time of day and your tone. The other is one sentence in a finding's details. It comes from your tone, a general line of ours and that finding's own facts. Those facts can name other activities and give sleep and step figures from Apple Health. Nothing is sent to any AI service. Activities in Habits, a set of symptoms, such as headaches, and the starting activities Pain, Stress, Medication and Therapy are kept away from the model. Without Apple Intelligence, Meontor shows lines of its own."
 			},
 			{
 				q: 'What does "Written on device" mean?',
@@ -94,11 +94,11 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'What does Meontor read from Health?',
-				a: 'Sleep, steps, active energy, resting heart rate and workouts, each one once you turn it on, and never before. When you turn a metric on, it reads the last 90 days. It never writes to Health.'
+				a: 'Sleep, steps and workouts, each one once you turn it on, and never before. When you turn a metric on, it reads the last 90 days. It never writes to Health.'
 			},
 			{
 				q: 'Can I export or erase my data?',
-				a: "Yes, from Settings, then Privacy. Export saves your activities and each entry's time, value, note and where you logged it. The JSON file goes where you choose. It leaves out Apple Health data, roles, categories, settings, marks on findings, and details such as calories or what kind of coffee. Erase everything removes your entries, roles, categories and anything copied from Health. It then restores the starting activities. Settings such as your tone stay, and so do your Health metrics, so readings come back on the next read unless you turn them off. A saved copy of the Mentor's latest findings can stay until the app next works them out."
+				a: "Yes, from Settings, then Privacy. Export saves a JSON file where you choose. It holds your entries with their details, your activities and their settings, your categories and your roles. It leaves out Apple Health data, what the app works out from your log, your marks on findings and the app's own settings. Erase everything removes your entries, the roles, categories and activities you made, your favourites, your marks on findings and anything copied from Health. It also removes what the app worked out from your log, including the Mentor's saved findings. It then restores the starting set. A backup made earlier keeps its copy. Settings such as your tone stay, and so do your Health metrics, so readings come back on the next read unless you turn them off."
 			},
 			{
 				q: 'Can I lock Meontor?',
