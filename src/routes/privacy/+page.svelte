@@ -36,7 +36,7 @@
 <LegalPage
 	title="Privacy Policy"
 	intro="Meontor is an app for iPhone and iPad for logging your day and seeing the patterns in it. It has no account, no server and no tracking. What you log is stored on your device, and Meontor sends none of it anywhere."
-	effective="November 3, 2026"
+	effective="November 4, 2026"
 >
 	<section>
 		<h2>1. What Meontor keeps, and where</h2>
