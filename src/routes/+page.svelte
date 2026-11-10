@@ -12,7 +12,7 @@
 	import PhoneFrame from '$lib/components/PhoneFrame.svelte';
 	import Screenshot from '$lib/components/Screenshot.svelte';
 	import WidgetShowcase from '$lib/components/WidgetShowcase.svelte';
-	import PatternsShowcase from '$lib/components/PatternsShowcase.svelte';
+	import MentorShowcase from '$lib/components/MentorShowcase.svelte';
 	import SiriShowcase from '$lib/components/SiriShowcase.svelte';
 	import PrivacyBand from '$lib/components/PrivacyBand.svelte';
 	import AppStoreCta from '$lib/components/AppStoreCta.svelte';
@@ -101,9 +101,9 @@
 
 	<PrivacyBand />
 
-	<PatternsShowcase />
+	<MentorShowcase />
 
-	<Feature eyebrow="Your days" title="Every day, drawn as it happened." flip>
+	<Feature eyebrow="Your days" title="Every day, as it happened." flip>
 		<p>Every tap and every stretch, newest first. Swipe to fix an entry.</p>
 		<p>Workouts from Apple Health join them if you allow it.</p>
 		{#snippet media()}
@@ -138,7 +138,7 @@
 
 	<section id="everyone" class="mx-auto max-w-6xl scroll-mt-20 px-5 pb-12 sm:pb-16">
 		<div class="fade-in text-center" use:reveal>
-			<p class="text-sm font-semibold tracking-wide text-accent">For everyone</p>
+			<h2 class="text-sm font-semibold tracking-wide text-accent">For everyone</h2>
 			<p class="mx-auto mt-3 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
 				Meontor works at the largest text sizes, and with VoiceOver and Voice Control.
 			</p>
