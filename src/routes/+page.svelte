@@ -12,8 +12,7 @@
 	import PhoneFrame from '$lib/components/PhoneFrame.svelte';
 	import Screenshot from '$lib/components/Screenshot.svelte';
 	import WidgetShowcase from '$lib/components/WidgetShowcase.svelte';
-	import HowItLearns from '$lib/components/HowItLearns.svelte';
-	import PatternsShowcase from '$lib/components/PatternsShowcase.svelte';
+	import MentorShowcase from '$lib/components/MentorShowcase.svelte';
 	import SiriShowcase from '$lib/components/SiriShowcase.svelte';
 	import PrivacyBand from '$lib/components/PrivacyBand.svelte';
 	import AppStoreCta from '$lib/components/AppStoreCta.svelte';
@@ -21,16 +20,17 @@
 	import { reveal } from '$lib/actions/reveal';
 	import { COMPANY, SITE_URL } from '$lib/constants/app';
 
+	// Each claim is checked against the app at f67dd35 (2026-11-04); the T-006 report holds the proof.
 	const calm = [
 		{ icon: 'leaf', title: 'No streaks' },
 		{ icon: 'scale', title: 'No scores' },
-		{ icon: 'heart', title: 'No comparisons' }
+		{ icon: 'heart', title: 'No comparisons with anyone' }
 	];
 </script>
 
 <SeoHead
 	title="Meontor · Log your day in a tap"
-	description="Meontor is a calm app for iPhone and iPad for logging your day in a tap, with a smart widget and an on-device Mentor that reflects on what your day gave you. No account, no tracking."
+	description="Meontor is a calm app for iPhone and iPad for logging your day in a tap, with widgets that suggest what to log now and a Mentor that notices patterns in your days. No account, no tracking."
 	path="/"
 	imageAlt="The Meontor mark and wordmark, with the line Moment + Mentor"
 	structuredData={[
@@ -44,7 +44,7 @@
 			applicationCategory: 'LifestyleApplication',
 			offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 			description:
-				'Tap to log your day, a smart Home Screen widget, and an on-device Mentor that reflects on what your day gave you.',
+				'Tap to log your day, widgets that suggest what to log now, and a Mentor that notices patterns in your days.',
 			author: { '@type': 'Organization', name: COMPANY, url: SITE_URL }
 		}
 	]}
@@ -53,21 +53,17 @@
 <Hero />
 
 <div id="features" class="scroll-mt-14">
-	<Feature eyebrow="Capture" title="One tap, under a second.">
+	<Feature eyebrow="Capture" title="One tap, and it's logged.">
 		<p>Coffee? Tap. Walk? Tap. Mood? Pick a face. Details when you want them.</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
 					name="mood"
-					alt="Logging a mood: five faces from Low to Great, with an optional note"
+					alt="Logging a mood: five faces from Low to Great, with a link to add a note"
 				/>
 			</PhoneFrame>
 		{/snippet}
 	</Feature>
-
-	<WidgetShowcase />
-
-	<HowItLearns />
 
 	<Feature eyebrow="Everything else" title="Anything else is one search away." flip>
 		<p>Over a hundred everyday activities, in categories you can make your own.</p>
@@ -75,36 +71,46 @@
 			<PhoneFrame>
 				<Screenshot
 					name="capture"
-					alt="Quick Capture, with a search field and category cards for Family, Sleep, Care, Food and Drink, Body and Mind, and Movement"
+					alt="The Log screen: a search field, four favourites, and category cards for Family, Sleep, Care, and Food & Drink"
 				/>
 			</PhoneFrame>
 		{/snippet}
 	</Feature>
 
-	<Feature id="mentor" eyebrow="Mentor" title="What your day gave you.">
-		<p>Your day in a sentence, written on your iPhone. A reflection, never a score.</p>
-		<p>In the evening, a question for tonight, answered in a word or a page.</p>
+	<Feature id="now" eyebrow="Now" title="Right for this hour, from day one.">
+		<p>
+			Six suggestions fit the hour from your first day. Within about a week, your own routine leads.
+		</p>
+		<p>
+			Today so far draws your day on one line, with every capture grouped by part of the day. Sleep
+			and steps join it if you allow Apple Health.
+		</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
-					name="mentor"
-					alt="The Mentor on Saturday: the morning looked after you, with the gym; the afternoon put things in their place, with the laundry; the evening left room to unwind, with a film. The day drawn on one line below."
+					name="today"
+					alt="The Today so far card: 6 hr 40 min asleep, 5,200 steps and 8 captures, a line across the day, and the captures grouped by morning, afternoon and evening"
 				/>
 			</PhoneFrame>
 		{/snippet}
 	</Feature>
 
-	<PatternsShowcase />
+	<WidgetShowcase />
 
 	<SiriShowcase />
 
-	<Feature eyebrow="Your days" title="Every day, drawn as it happened." flip>
-		<p>Moments as dots, stretches as bars. Swipe to fix an entry.</p>
+	<PrivacyBand />
+
+	<MentorShowcase />
+
+	<Feature eyebrow="Your days" title="Every day, as it happened." flip>
+		<p>Every tap and every stretch, newest first. Swipe to fix an entry.</p>
+		<p>Workouts from Apple Health join them if you allow it.</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
 					name="timeline"
-					alt="Timeline: today's entries on a single line, from walking at lunchtime to dinner"
+					alt="The Timeline for today: 14 things, newest first, from Deep focus, still running, back through an early gym visit"
 				/>
 			</PhoneFrame>
 		{/snippet}
@@ -130,7 +136,14 @@
 		</div>
 	</section>
 
-	<PrivacyBand />
+	<section id="everyone" class="mx-auto max-w-6xl scroll-mt-20 px-5 pb-12 sm:pb-16">
+		<div class="fade-in text-center" use:reveal>
+			<h2 class="text-sm font-semibold tracking-wide text-accent">For everyone</h2>
+			<p class="mx-auto mt-3 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
+				Meontor works at the largest text sizes, and with VoiceOver and Voice Control.
+			</p>
+		</div>
+	</section>
 </div>
 
 <section class="px-5 py-24 sm:py-32">

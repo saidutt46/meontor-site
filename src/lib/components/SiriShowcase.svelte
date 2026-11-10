@@ -5,7 +5,11 @@
   This source code is private property. Unauthorized copying of this file, via any medium is strictly prohibited.
   Proprietary and confidential.
 -->
-<!-- Siri, a control and the Dynamic Island, drawn rather than photographed. -->
+<!--
+  Siri and a control, drawn; the Live Activity is the app's own Lock Screen card
+  (the DEBUG gallery at f67dd35). The watch line: SpanLiveActivity.swift declares
+  the Smart Stack family; there is no watch app, so say no more than that.
+-->
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
 	import Icon from './Icon.svelte';
@@ -48,14 +52,25 @@
 		</figure>
 		<figure class="card">
 			<div class="stage">
-				<div class="island">
-					<span class="live" aria-hidden="true"></span>
-					<span class="text-sm font-medium">Deep focus</span>
-					<span class="ml-auto font-mono text-sm tabular-nums">0:42:10</span>
-				</div>
+				<picture>
+					<source
+						srcset="/images/widgets/live-lock-dark.webp"
+						media="(prefers-color-scheme: dark)"
+					/>
+					<img
+						src="/images/widgets/live-lock-light.webp"
+						alt="A Lock Screen card with Deep focus running for over an hour and a Stop button"
+						width="740"
+						height="179"
+						loading="lazy"
+						decoding="async"
+						class="live-card"
+					/>
+				</picture>
 			</div>
 			<figcaption>
-				<strong>Live Activities</strong> Anything running stays in view, with Stop a tap away.
+				<strong>Live Activities</strong> Anything running stays in view, with Stop a tap away. On Apple
+				Watch, it shows in the Smart Stack.
 			</figcaption>
 		</figure>
 	</div>
@@ -115,21 +130,12 @@
 		color: var(--accent);
 		box-shadow: 0 6px 18px -8px rgb(0 0 0 / 0.3);
 	}
-	.island {
-		display: flex;
+	.live-card {
+		display: block;
 		width: 100%;
-		max-width: 16rem;
-		align-items: center;
-		gap: 0.6rem;
-		padding: 0.8rem 1.1rem;
-		border-radius: 999px;
-		background: #000;
-		color: #fff;
-	}
-	.live {
-		width: 0.55rem;
-		height: 0.55rem;
-		border-radius: 999px;
-		background: #34c759;
+		max-width: 20rem;
+		height: auto;
+		border-radius: 1.4rem;
+		box-shadow: 0 8px 20px -10px rgb(0 0 0 / 0.3);
 	}
 </style>
