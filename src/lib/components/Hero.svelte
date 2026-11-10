@@ -19,11 +19,11 @@
 		<Wordmark class="mt-6 h-11 text-label sm:h-14" />
 		<p class="mt-3 text-xl text-label-2 sm:text-2xl">Moment + Mentor.</p>
 		<h1 class="mt-10 text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
-			Log your day in a tap.<br class="hidden sm:block" /> Understand it in a sentence.
+			Log your day in a tap.<br class="hidden sm:block" /> See the patterns over time.
 		</h1>
 		<div class="mt-10 flex flex-col items-center gap-3">
 			<AppStoreCta />
-			<p class="text-sm text-label-3">On TestFlight now. Free, with no account.</p>
+			<p class="text-sm text-label-3">Free for iPhone and iPad, with no account.</p>
 		</div>
 	</div>
 	<div class="mt-16 flex justify-center sm:mt-20">
@@ -31,7 +31,7 @@
 			<Screenshot
 				name="now"
 				eager
-				alt="Meontor's Now screen: six suggestions for right now, a thought, and today so far"
+				alt="Meontor's Now screen: Deep focus running, six activities to log for this hour, a short thought, and today so far"
 			/>
 		</PhoneFrame>
 	</div>

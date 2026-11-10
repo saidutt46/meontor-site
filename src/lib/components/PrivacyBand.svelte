@@ -11,7 +11,7 @@
 
 	const points = [
 		{ title: 'No account', body: 'Nothing to sign up for.' },
-		{ title: 'No server', body: 'Your days never leave your phone.' },
+		{ title: 'No server', body: 'Meontor sends none of your log anywhere.' },
 		{ title: 'No tracking', body: 'Not in the app. This site counts visits, without cookies.' },
 		{ title: 'Health, if you want it', body: 'Read, never written.' }
 	];
@@ -24,8 +24,11 @@
 				<Icon name="lock" class="size-7" />
 			</span>
 			<h2 class="mt-6 max-w-[18ch] text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-				Everything stays on your iPhone.
+				Your days stay on your device.
 			</h2>
+			<p class="mt-5 text-lg leading-relaxed text-label-2 sm:text-xl">
+				Backups follow your own settings.
+			</p>
 		</div>
 		<div class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 			{#each points as point (point.title)}

@@ -14,7 +14,7 @@
 
 <SeoHead
 	title="Terms of Use · Meontor"
-	description="The terms for using Meontor, a free app for iPhone and iPad for logging your day and reflecting on it."
+	description="The terms for using Meontor, a free app for iPhone and iPad for logging your day, with findings and recaps drawn from what you log."
 	path="/terms"
 	imageAlt="Meontor terms of use"
 />
@@ -22,13 +22,14 @@
 <LegalPage
 	title="Terms of Use"
 	intro="These terms cover your use of Meontor. They're written to be read, and they sit alongside Apple's own terms for apps from the App Store."
-	effective="September 26, 2026"
+	effective="November 9, 2026"
 >
 	<section>
 		<h2>1. About Meontor</h2>
 		<p>
-			Meontor is a free app for iPhone and iPad for logging your day and reflecting on it, published
-			by Daivat Creations. It is provided at no cost and does not require an account.
+			Meontor is a free app for iPhone and iPad for logging your day, with findings and recaps drawn
+			from what you log, published by Daivat Creations. It is provided at no cost and does not
+			require an account.
 		</p>
 	</section>
 
@@ -44,9 +45,9 @@
 	<section>
 		<h2>3. Your Content</h2>
 		<p>
-			What you log in Meontor is yours. It stays on your device, and we have no access to it.
-			Meontor claims no rights to your content, and you are responsible for what you record, export
-			and share.
+			What you log in Meontor is yours. It is stored on your device, and we have no access to it.
+			Backups follow your iCloud or computer backup settings, as they do for any app. Meontor claims
+			no rights to your content, and you are responsible for what you record, export and share.
 		</p>
 	</section>
 
@@ -64,8 +65,8 @@
 		<h2>5. Not Medical Advice</h2>
 		<p>
 			<strong
-				>Meontor's reflections, figures and Health readings are for your own reflection. They are
-				not medical, psychological or professional advice.</strong
+				>Meontor's findings, recaps, figures and Health readings are for your own information. They
+				are not medical, psychological or professional advice.</strong
 			>
 			Talk to a qualified professional about your health, and don't rely on the app in an emergency.
 		</p>
@@ -89,7 +90,7 @@
 		</p>
 		<p>
 			We do not warrant that the app will be uninterrupted, error-free, or free of harmful
-			components, or that its suggestions, figures or reflections will be accurate or complete.
+			components, or that its suggestions, figures, findings or recaps will be accurate or complete.
 		</p>
 	</section>
 
