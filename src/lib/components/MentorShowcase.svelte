@@ -6,8 +6,9 @@
   Proprietary and confidential.
 -->
 <!--
-  The Mentor, in words only (owner, 2026-11-09): no screenshot while the Mentor's
-  screens are still changing, and only claims that will survive those changes.
+  MentorShowcase: the home page's Mentor section, in words only (owner,
+  2026-11-09): no screenshot while the Mentor's screens are still changing, and
+  only claims that will survive those changes.
   Checked against the app at f67dd35: Swift writes every finding from the
   person's own log (MeontorCore/Findings/Finding.swift); not every finding is a
   count, so the copy does not say so. The example is the app's own
