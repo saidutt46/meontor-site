@@ -8,8 +8,9 @@
 <!--
   The Mentor, in words only (owner, 2026-11-09): no screenshot while the Mentor's
   screens are still changing, and only claims that will survive those changes.
-  Checked against the app at f67dd35: Swift writes every finding with the count
-  behind it (MeontorCore/Findings/Finding.swift), the example is the app's own
+  Checked against the app at f67dd35: Swift writes every finding from the
+  person's own log (MeontorCore/Findings/Finding.swift); not every finding is a
+  count, so the copy does not say so. The example is the app's own
   line (FindingEngine+GoodDays.swift), and a week's recap never says what the
   week lacked (WeekRecap.swift). Never say that Apple Intelligence writes about
   the person, and never name rings, "Your weeks" or Ask.
@@ -28,8 +29,8 @@
 			It notices what your days have in common.
 		</h2>
 		<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
-			As your log grows, the Mentor finds patterns in it. Each one is a count from your own days,
-			worked out on your device.
+			As your log grows, the Mentor finds patterns in it. Each one comes from your own days, worked
+			out on your device.
 		</p>
 	</div>
 	<div class="fade-in mx-auto mt-12 max-w-xl" use:reveal>

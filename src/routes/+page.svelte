@@ -82,8 +82,8 @@
 			Six suggestions fit the hour from your first day. Within about a week, your own routine leads.
 		</p>
 		<p>
-			Today so far draws your day on one line, with every capture by morning, afternoon and evening.
-			Sleep and steps join it if you allow Apple Health.
+			Today so far draws your day on one line, with every capture grouped by part of the day. Sleep
+			and steps join it if you allow Apple Health.
 		</p>
 		{#snippet media()}
 			<PhoneFrame>
@@ -104,13 +104,13 @@
 	<PatternsShowcase />
 
 	<Feature eyebrow="Your days" title="Every day, drawn as it happened." flip>
-		<p>Every tap and every stretch, in the order they happened. Swipe to fix an entry.</p>
+		<p>Every tap and every stretch, newest first. Swipe to fix an entry.</p>
 		<p>Workouts from Apple Health join them if you allow it.</p>
 		{#snippet media()}
 			<PhoneFrame>
 				<Screenshot
 					name="timeline"
-					alt="The Timeline for today: 14 things, from an early gym visit to Deep focus, still running"
+					alt="The Timeline for today: 14 things, newest first, from Deep focus, still running, back through an early gym visit"
 				/>
 			</PhoneFrame>
 		{/snippet}
