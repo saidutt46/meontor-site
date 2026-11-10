@@ -7,8 +7,9 @@
 -->
 <!--
   The widgets at their true Home Screen size (large 364 x 382 pt, medium 364 x 170 pt,
-  small 170 x 170 pt), as build 11 draws them,
-  on a wallpaper-like ground, rather than inside a phone.
+  small 170 x 170 pt), in the Graphite look the app draws at f67dd35 (DESIGN §8),
+  on a wallpaper-like ground, rather than inside a phone. A tile that asks for a
+  value or details opens the app (MeontorWidgetFace.swift), so the copy says "most".
 -->
 <script lang="ts">
 	import { reveal } from '$lib/actions/reveal';
@@ -36,10 +37,11 @@
 		<h2
 			class="mx-auto mt-3 max-w-[20ch] text-4xl font-semibold tracking-tight text-balance sm:text-5xl"
 		>
-			Three things, right when you need them.
+			Your next tap, on your Home Screen.
 		</h2>
 		<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
-			It learns your rhythm and puts your next tap on your Home Screen. No need to open the app.
+			Small, medium and large widgets suggest what to log now. Most taps log without opening the
+			app. Calm and monochrome, in light and dark.
 		</p>
 	</div>
 	<div class="wallpaper fade-in mt-14 rounded-[2.5rem] px-5 py-14 sm:py-20" use:reveal>
@@ -48,23 +50,28 @@
 				'large',
 				364,
 				382,
-				"The large widget: the day's line with its hours, the last thing logged, six tiles and a thought"
+				"The large widget: Thursday's line from 6 am to midnight, Coffee 25 minutes ago, six buttons and a short thought"
 			)}
 			<div class="flex flex-col items-center gap-5 sm:gap-6">
 				{@render widget(
 					'medium',
 					364,
 					170,
-					'The medium widget: Sunday, 6 logged, the day drawn as a line, and tiles for Coffee, Water and Walk'
+					'The medium widget: Thursday, 6 logged, the day drawn as a line, and buttons for Coffee, Water and Walk'
 				)}
 				{@render widget(
 					'running',
 					364,
 					170,
-					'The medium widget while Deep focus runs: a large timer, when it started, and a round Stop'
+					'The medium widget while Deep focus runs: its timer, when it started, a round Stop and three activities'
 				)}
 			</div>
-			{@render widget('small', 170, 170, 'The small widget with one suggestion, Coffee')}
+			{@render widget(
+				'small',
+				170,
+				170,
+				'The small widget: 6 logged, 1 hr 30 min, and one button for Coffee'
+			)}
 		</div>
 	</div>
 </section>

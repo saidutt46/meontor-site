@@ -2,7 +2,7 @@
 
 ### Moment + Mentor.
 
-_Log your day in a tap. Understand it in a sentence._
+_Log your day in a tap. See the patterns over time._
 
 [Website](https://meontor-site.vercel.app) • [Support](https://meontor-site.vercel.app/support) • [Privacy](https://meontor-site.vercel.app/privacy)
 
@@ -10,7 +10,7 @@ _Log your day in a tap. Understand it in a sentence._
 
 ## Overview
 
-Meontor is an app for iPhone and iPad (iOS 26 or later) for logging your day: one tap to capture a moment, a smart Home Screen widget that suggests what you're likely to log right now, and an on-device Mentor, written by Apple Intelligence, that reflects on what your day gave you. No account, no server, no tracking.
+Meontor is an app for iPhone and iPad (iOS 26 or later) for logging your day: one tap to capture a moment, Home Screen widgets that suggest what you're likely to log right now, and a Mentor that notices patterns across your days, worked out on your device. No account, no server, no tracking.
 
 This repository hosts the **marketing and support site** for Meontor. The app itself lives in a private repository.
 

@@ -6,53 +6,46 @@
   Proprietary and confidential.
 -->
 <!--
-  The Mentor's week: the seven days drawn (a screenshot), and "What you're
-  learning about yourself", drawn rather than photographed because it sits below
-  the fold of the app's week view. Card for card as the app shows it (DESIGN
-  §6.3): a symbol tile on a grey wash, then the sentence. The sentences are ones
-  the app really writes, from its sample life and its tests.
+  The Mentor, in words only (owner, 2026-11-09): no screenshot while the Mentor's
+  screens are still changing, and only claims that will survive those changes.
+  Checked against the app at f67dd35: Swift writes every finding with the count
+  behind it (MeontorCore/Findings/Finding.swift), the example is the app's own
+  line (FindingEngine+GoodDays.swift), and a week's recap never says what the
+  week lacked (WeekRecap.swift). Never say that Apple Intelligence writes about
+  the person, and never name rings, "Your weeks" or Ask.
 -->
 <script lang="ts">
-	import Feature from './Feature.svelte';
-	import PhoneFrame from './PhoneFrame.svelte';
-	import Screenshot from './Screenshot.svelte';
-	import Icon from './Icon.svelte';
 	import { reveal } from '$lib/actions/reveal';
-
-	const patterns = [
-		{ icon: 'scope', text: 'Your focus tends to gather between 9:30 am and 11:30 am.' },
-		{ icon: 'clock', text: 'Standup has held around 9:30 am on weekdays for four weeks.' },
-		{ icon: 'sparkles', text: 'On days with Walk, your mood tends to read higher.' }
-	];
+	import Icon from './Icon.svelte';
 </script>
 
-<Feature id="week" eyebrow="Each week" title="What you're learning about yourself." flip>
-	<p>After a few weeks, it notices what holds: when you focus, what makes a good day.</p>
-	{#snippet media()}
-		<PhoneFrame>
-			<Screenshot
-				name="mentor-week"
-				alt="The Mentor's week, Sep 20 to 26: mornings for the work in hand, evenings for the people you love, a weekend for looking after yourself, over seven days drawn as strips on one line"
-			/>
-		</PhoneFrame>
-	{/snippet}
-</Feature>
-
-<div class="mx-auto -mt-6 max-w-6xl px-5 pb-20 sm:pb-28">
-	<div class="fade-in mx-auto max-w-2xl rounded-[2.5rem] bg-grouped p-6 sm:p-10" use:reveal>
-		<h3 class="text-2xl font-bold tracking-tight">What you're learning about yourself</h3>
-		<ul class="mt-5 space-y-3">
-			{#each patterns as pattern (pattern.icon)}
-				<li class="flex items-center gap-4 rounded-2xl bg-elevated p-4">
-					<span
-						class="grid size-9 shrink-0 place-items-center rounded-[0.6rem] bg-grouped text-label-2"
-					>
-						<Icon name={pattern.icon} class="size-5" />
-					</span>
-					<p class="leading-snug">{pattern.text}</p>
-				</li>
-			{/each}
-		</ul>
-		<p class="mt-4 text-sm text-label-2">From your last four weeks.</p>
+<section id="mentor" class="mx-auto max-w-6xl scroll-mt-20 px-5 py-20 sm:py-28">
+	<div class="fade-in text-center" use:reveal>
+		<p class="text-sm font-semibold tracking-wide text-accent">Mentor</p>
+		<h2
+			class="mx-auto mt-3 max-w-[20ch] text-4xl font-semibold tracking-tight text-balance sm:text-5xl"
+		>
+			It notices what your days have in common.
+		</h2>
+		<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
+			As your log grows, the Mentor finds patterns in it. Each one is a count from your own days,
+			worked out on your device.
+		</p>
 	</div>
-</div>
+	<div class="fade-in mx-auto mt-12 max-w-xl" use:reveal>
+		<figure class="flex items-center gap-4 rounded-[1.75rem] bg-grouped p-5 sm:p-6">
+			<span class="grid size-10 shrink-0 place-items-center rounded-[0.7rem] bg-canvas text-accent">
+				<Icon name="walk" class="size-6" />
+			</span>
+			<blockquote class="text-lg leading-snug font-medium">
+				7 of your 9 best days had a walk in them.
+			</blockquote>
+		</figure>
+	</div>
+	<p
+		class="fade-in mx-auto mt-10 max-w-2xl text-center text-lg leading-relaxed text-label-2 sm:text-xl"
+		use:reveal
+	>
+		Once a week, a short recap of what the week held. Never what it lacked.
+	</p>
+</section>
