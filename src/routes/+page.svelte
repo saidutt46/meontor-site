@@ -20,7 +20,8 @@
 	import { reveal } from '$lib/actions/reveal';
 	import { COMPANY, SITE_URL } from '$lib/constants/app';
 
-	// Each claim is checked against the app at f67dd35 (2026-11-04); the T-006 report holds the proof.
+	// Each claim is checked against the app at f67dd35 (2026-11-04; the T-006 report) and again at
+	// 0eff2a7 (2026-11-11; the T-010 report, which also proves the Mentor section).
 	const calm = [
 		{ icon: 'leaf', title: 'No streaks' },
 		{ icon: 'scale', title: 'No scores' },
@@ -103,7 +104,7 @@
 
 	<MentorShowcase />
 
-	<Feature eyebrow="Your days" title="Every day, as it happened." flip>
+	<Feature eyebrow="Your days" title="Every day, as it happened.">
 		<p>Every tap and every stretch, newest first. Swipe to fix an entry.</p>
 		<p>Workouts from Apple Health join them if you allow it.</p>
 		{#snippet media()}
