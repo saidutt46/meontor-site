@@ -73,11 +73,11 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'Does the Mentor use AI?',
-				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model does two things. It writes the day's thought, from the time of day and your tone. And on iOS 27 or later, it reads a question you type in Ask; the app then writes the answer from your log. Nothing is sent to any AI service. Activities in Habits, a set of symptoms, such as headaches, and the starting activities Pain, Stress, Medication and Therapy are kept away from the model. Without Apple Intelligence, Meontor shows a thought of its own."
+				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model does two things. It writes the day's thought, from the time of day and your tone. And on iOS 27 or later, it reads a question you type in Ask; the app then writes the answer from your log. Nothing is sent to any AI service. Activities in Habits, a set of symptoms, such as headaches, and the starting activities Pain, Stress, Medication and Therapy are kept away from the model: their names are taken out of your question before it reads it. For an activity you made yourself, that starts once you have logged it in the past 90 days. Without Apple Intelligence, Meontor shows a thought of its own."
 			},
 			{
 				q: 'What can I ask the Mentor?',
-				a: "Once your log can answer them, Ask offers questions to tap, and the Mentor answers them from your log. On iOS 27 or later with Apple Intelligence on, you can also type one, such as when you usually read. Ask can tell you how often, when, how long, which days, or what a day held. Apple's on-device model reads your question and picks what kind it is. The app works out the answer from your log and writes all of it. Your question is not saved, and nothing is sent anywhere. If a question sounds like you are having a hard time, Ask can show a fixed line suggesting someone you trust or a local helpline."
+				a: "Once your log can answer them, Ask offers questions to tap, and the Mentor answers them from your log. On iOS 27 or later with Apple Intelligence on, you can also type one, such as when you usually read. Ask can tell you how often, when, how long, which days, or what a day held. Apple's on-device model reads your question, with the names of private activities taken out, and picks what kind it is. The app works out the answer from your log and writes all of it. Your question is not saved, and nothing is sent anywhere. If a question sounds like you are having a hard time, Ask can show a fixed line suggesting someone you trust or a local helpline."
 			},
 			{
 				q: 'Does the Mentor judge my days?',
