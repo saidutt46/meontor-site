@@ -16,19 +16,19 @@
   is gone (FindingNoteWriter, FindingNoteLine, findingNotePrompt deleted). Ask, iOS 27 with the
   model available (FoundationModelsAskReader.isAvailable, AskSection.modelReady): the model gets
   the typed question with withheld names put as "something" (AskResponder modelQuestion, T-148;
-  Swift reads the full question) and the nameable labels and returns a kind, a label and a day from fixed
-  lists (AskReader.swift); Swift screens first (AskReading.before, AskDistress) and writes every
-  line (FindingEngine+Asked.swift, AppCopy+Ask.swift). The distress check gets the question with
-  withheld names put as "something" and answers yes or no (DistressCheck.swift,
+  Swift reads the full question) and the nameable labels and returns a kind, a label and a day
+  from fixed lists (AskReader.swift); Swift screens first (AskReading.before, AskDistress) and
+  writes every line (FindingEngine+Asked.swift, AppCopy+Ask.swift). The distress check gets the
+  question with withheld names put as "something" and answers yes or no (DistressCheck.swift,
   AskDistress+Withheld.swift); its reply has no link (AppCopy.Mentor.Ask.distressReply). The
   question is view state, never stored; Ask records no reason (AskResponder.trace logs the
   reading, never the question; debug-level log lines carry the reading and any line the tone check
   refused). AskVocabulary keeps Withheld and SeedCatalog's private seeds out of the model's list;
   its withheld names are every withheld seed plus withheld activities in the 90-day lookback
-  (FindingEngine.lookbackDays), by label and spoken name. A question that names one is refused
-  before the model (AskReading.before). MentorDiagnostics has the thought channel alone; clearAll
-  also removes the
-  old findingNote key. Export: DataExport.swift (Gift is five fixed choices). Erase:
+  (FindingEngine.lookbackDays), by label and spoken name. A question that names one is usually
+  refused before the model (AskReading.before; AskVocabulary.namesWithheld compares match length).
+  MentorDiagnostics has the thought channel alone; clearAll also removes the old findingNote key.
+  Export: DataExport.swift (Gift is five fixed choices). Erase:
   StoreReset.swift, PrivacyView.swift (erase(), MentorDiagnostics.clearAll),
   NotificationPreferences.forgetLog; Export and Erase unchanged since f67dd35 but for the note
   cache's removal. Re-check before changing a claim.
@@ -156,9 +156,10 @@
 			smoking, alcohol and betting; a set of symptoms, such as headaches; and the starting
 			activities Pain, Stress, Medication and Therapy. An activity you make yourself is kept away
 			too if you put it in Habits. Their names are never among the names Ask gives the model. A
-			question about one of them is turned away before either model reads it. Any other question
-			reaches the model with their names taken out, and the rest of your words stay. For an activity
-			you make yourself, its name is taken out while you have logged it in the past 90 days.
+			question that names one of them is usually turned away before either model reads it. A
+			question that passes the app's own checks reaches the model with their names taken out, and
+			the rest of your words stay. For an activity you make yourself, its name is taken out while
+			you have logged it in the past 90 days.
 		</p>
 		<p>
 			These activities are never named in a finding, an answer in Ask, a weekly recap, a finding
