@@ -15,6 +15,7 @@
 		eyebrow,
 		title,
 		flip = false,
+		level = 'h2',
 		children,
 		media
 	}: {
@@ -22,6 +23,7 @@
 		eyebrow: string;
 		title: string;
 		flip?: boolean;
+		level?: 'h2' | 'h3';
 		children: Snippet;
 		media: Snippet;
 	} = $props();
@@ -31,7 +33,11 @@
 	<div class="fade-in grid items-center gap-12 md:grid-cols-2 md:gap-20" use:reveal>
 		<div class={flip ? 'md:order-2' : ''}>
 			<p class="text-sm font-semibold tracking-wide text-accent">{eyebrow}</p>
-			<h2 class="mt-3 text-4xl font-semibold tracking-tight text-balance sm:text-5xl">{title}</h2>
+			<svelte:element
+				this={level}
+				class="mt-3 text-4xl font-semibold tracking-tight text-balance sm:text-5xl"
+				>{title}</svelte:element
+			>
 			<div class="mt-5 space-y-4 text-lg leading-relaxed text-label-2 sm:text-xl">
 				{@render children()}
 			</div>

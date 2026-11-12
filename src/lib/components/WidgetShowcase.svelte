@@ -7,7 +7,7 @@
 -->
 <!--
   The widgets at their true Home Screen size (large 364 x 382 pt, medium 364 x 170 pt,
-  small 170 x 170 pt), in the Graphite look the app draws at f67dd35 (DESIGN §8),
+  small 170 x 170 pt), in the Graphite look the app draws (DESIGN §8), taken at f67dd35 (`large` at 8ed2f49),
   on a wallpaper-like ground, rather than inside a phone. A tile that asks for a
   value or details opens the app (MeontorWidgetFace.swift), so the copy says "most".
 -->
