@@ -62,7 +62,7 @@
 	</Feature>
 
 	<Feature level="h3" eyebrow="A finding" title="Tap one for more about it." flip>
-		<p>The sheet shows how the Mentor worked the finding out.</p>
+		<p>The sheet shows more about it, such as when and how often.</p>
 		<p>
 			When the Mentor is not sure, it says nothing. Tap the thumbs-down to hide a card you don't
 			need.
