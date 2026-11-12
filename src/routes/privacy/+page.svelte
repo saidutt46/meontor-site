@@ -6,22 +6,19 @@
   Proprietary and confidential.
 -->
 <!--
-  Every changed sentence here was checked against the app's code at main 8ed2f49 (v1) on
-  2026-11-11, with the diff from f67dd35 read; the rest at 7c8baae and f1505c4 (build 20). No
+  Every changed sentence here was checked against the app's code at main 1ba6ef6 (v1, T-148) on 2026-11-11, with the diffs from f67dd35 to 8ed2f49 and on to 1ba6ef6 read; the rest at 7c8baae and f1505c4 (build 20). No
   networking code, CloudKit or third-party package; HealthKit toShare: [] with three read types
   (HealthReader.swift), 90 days on turning a metric on and a 7-day window after (HealthSync.swift
   historyDays, windowDays; disable() deletes a metric's records). The on-device model gets the
   day phase and tone for a thought (FoundationModelsMentor.swift, unchanged). The finding's note
   is gone (FindingNoteWriter, FindingNoteLine, findingNotePrompt deleted). Ask, iOS 27 with the
-  model available (FoundationModelsAskReader.isAvailable, AskSection.modelReady): the model gets
-  the typed question and the nameable labels and returns a kind, a label and a day from fixed
+  model available (FoundationModelsAskReader.isAvailable, AskSection.modelReady): the model gets the typed question with withheld names put as "something" (AskResponder modelQuestion, T-148; Swift reads the full question) and the nameable labels and returns a kind, a label and a day from fixed
   lists (AskReader.swift); Swift screens first (AskReading.before, AskDistress) and writes every
   line (FindingEngine+Asked.swift, AppCopy+Ask.swift). The distress check gets the question with
   withheld names put as "something" and answers yes or no (DistressCheck.swift,
   AskDistress+Withheld.swift); its reply has no link (AppCopy.Mentor.Ask.distressReply). The
   question is view state, never stored; Ask records no reason (AskResponder.trace logs the
-  reading, never the question). AskVocabulary keeps Withheld and SeedCatalog's private seeds out
-  of the model's list. MentorDiagnostics has the thought channel alone; clearAll also removes the
+  reading, never the question). AskVocabulary keeps Withheld and SeedCatalog's private seeds out of the model's list; its withheld names are every withheld seed plus withheld activities in the 90-day lookback (FindingEngine.lookbackDays), by label and spoken name. MentorDiagnostics has the thought channel alone; clearAll also removes the
   old findingNote key. Export: DataExport.swift (Gift is five fixed choices). Erase:
   StoreReset.swift, PrivacyView.swift (erase(), MentorDiagnostics.clearAll),
   NotificationPreferences.forgetLog; Export and Erase unchanged since f67dd35 but for the note
@@ -116,12 +113,12 @@
 			</li>
 			<li>
 				Ask the Mentor anything, on iOS 27 or later. When you type a question about your log, the
-				model reads it. It is given your question and the names of the activities you have logged.
-				It gives back three things, each picked from a fixed list: what kind of question it is, such
-				as how often or what time, one of those activity names or none, and a day. The app checks
-				that reading against your words, then works out the answer from your log and writes every
-				word of it. The model writes nothing you see. Your question is held in memory while it is
-				read, and is not saved.
+				model reads it. It is given your question, with the names of private activities taken out,
+				and the names of the other activities you have logged. It gives back three things, each
+				picked from a fixed list: what kind of question it is, such as how often or what time, one
+				of those activity names or none, and a day. The app checks that reading against your words,
+				then works out the answer from your log and writes every word of it. The model writes
+				nothing you see. Your question is held in memory while it is read, and is not saved.
 			</li>
 		</ul>
 		<p>
@@ -149,8 +146,10 @@
 			A set of activities is kept away from the model: everything in the Habits category, such as
 			smoking, alcohol and betting; a set of symptoms, such as headaches; and the starting
 			activities Pain, Stress, Medication and Therapy. An activity you make yourself is kept away
-			too if you put it in Habits. Their names are never among the names Ask gives the model, and
-			the yes-or-no check gets your question with their names taken out.
+			too if you put it in Habits. Their names are never among the names Ask gives the model. Both
+			the reading and the yes-or-no check get your question with their names taken out, and the rest
+			of your words stay. For an activity you make yourself, its name is taken out once you have
+			logged it in the past 90 days.
 		</p>
 		<p>
 			These activities are never named in a finding, an answer in Ask, a weekly recap, a finding
