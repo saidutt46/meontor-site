@@ -73,7 +73,7 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'Does the Mentor use AI?',
-				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model does two things. It writes the day's thought, from the time of day and your tone. And on iOS 27 or later, it reads a question you type in Ask; the app then writes the answer from your log. Nothing is sent to any AI service. Activities in Habits, a set of symptoms, such as headaches, and the starting activities Pain, Stress, Medication and Therapy are kept away from the model: their names are taken out of your question before it reads it. For an activity you made yourself, that starts once you have logged it in the past 90 days. Without Apple Intelligence, Meontor shows a thought of its own."
+				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model is used in Meontor in a few ways. It writes the day's thought, from the time of day and your tone. And on iOS 27 or later, it reads a question you type in Ask, and answers one more yes-or-no question about it, to see whether you are having a hard time; the app then writes the answer from your log. Nothing is sent to any AI service. Activities in Habits, a set of symptoms, such as headaches, and the starting activities Pain, Stress, Medication and Therapy are kept away from the model. A question about one of them is turned away before the model reads it. Any other question reaches the model with their names taken out. For an activity you made yourself, its name is taken out while you have logged it in the past 90 days. Without Apple Intelligence, Meontor shows a thought of its own."
 			},
 			{
 				q: 'What can I ask the Mentor?',

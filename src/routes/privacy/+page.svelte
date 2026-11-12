@@ -6,19 +6,28 @@
   Proprietary and confidential.
 -->
 <!--
-  Every changed sentence here was checked against the app's code at main 1ba6ef6 (v1, T-148) on 2026-11-11, with the diffs from f67dd35 to 8ed2f49 and on to 1ba6ef6 read; the rest at 7c8baae and f1505c4 (build 20). No
+  Every changed sentence here was checked against the app's code at main 1ba6ef6 (v1, T-148) on
+  2026-11-11, with the diffs from f67dd35 to 8ed2f49 and on to 1ba6ef6 read; the rest at 7c8baae
+  and f1505c4 (build 20). No
   networking code, CloudKit or third-party package; HealthKit toShare: [] with three read types
   (HealthReader.swift), 90 days on turning a metric on and a 7-day window after (HealthSync.swift
   historyDays, windowDays; disable() deletes a metric's records). The on-device model gets the
   day phase and tone for a thought (FoundationModelsMentor.swift, unchanged). The finding's note
   is gone (FindingNoteWriter, FindingNoteLine, findingNotePrompt deleted). Ask, iOS 27 with the
-  model available (FoundationModelsAskReader.isAvailable, AskSection.modelReady): the model gets the typed question with withheld names put as "something" (AskResponder modelQuestion, T-148; Swift reads the full question) and the nameable labels and returns a kind, a label and a day from fixed
+  model available (FoundationModelsAskReader.isAvailable, AskSection.modelReady): the model gets
+  the typed question with withheld names put as "something" (AskResponder modelQuestion, T-148;
+  Swift reads the full question) and the nameable labels and returns a kind, a label and a day from fixed
   lists (AskReader.swift); Swift screens first (AskReading.before, AskDistress) and writes every
   line (FindingEngine+Asked.swift, AppCopy+Ask.swift). The distress check gets the question with
   withheld names put as "something" and answers yes or no (DistressCheck.swift,
   AskDistress+Withheld.swift); its reply has no link (AppCopy.Mentor.Ask.distressReply). The
   question is view state, never stored; Ask records no reason (AskResponder.trace logs the
-  reading, never the question). AskVocabulary keeps Withheld and SeedCatalog's private seeds out of the model's list; its withheld names are every withheld seed plus withheld activities in the 90-day lookback (FindingEngine.lookbackDays), by label and spoken name. MentorDiagnostics has the thought channel alone; clearAll also removes the
+  reading, never the question; debug-level log lines carry the reading and any line the tone check
+  refused). AskVocabulary keeps Withheld and SeedCatalog's private seeds out of the model's list;
+  its withheld names are every withheld seed plus withheld activities in the 90-day lookback
+  (FindingEngine.lookbackDays), by label and spoken name. A question that names one is refused
+  before the model (AskReading.before). MentorDiagnostics has the thought channel alone; clearAll
+  also removes the
   old findingNote key. Export: DataExport.swift (Gift is five fixed choices). Erase:
   StoreReset.swift, PrivacyView.swift (erase(), MentorDiagnostics.clearAll),
   NotificationPreferences.forgetLog; Export and Erase unchanged since f67dd35 but for the note
@@ -104,7 +113,7 @@
 		<p>
 			Meontor finds patterns in your log itself, with fixed rules in the app. It does not use a
 			language model for that. On a device with Apple Intelligence turned on, Meontor uses Apple's
-			on-device model for two things. Nothing is sent to any AI service.
+			on-device model in the ways listed here. Nothing is sent to any AI service.
 		</p>
 		<ul>
 			<li>
@@ -124,10 +133,10 @@
 		<p>
 			Ask also looks for signs that the person typing is having a hard time. The app checks the
 			question's words first, and a question it catches never reaches the model. Otherwise the model
-			is asked one more thing about the question, yes or no. Either check can show one fixed line in
-			place of an answer: "Your log can't answer this. If you're having a hard time, talking to
-			someone you trust, or a local helpline, can help." The line has no link, number or address,
-			and nothing is sent anywhere.
+			is used a second time, to answer one more thing about the question, yes or no. Either check
+			can show one fixed line in place of an answer: "Your log can't answer this. If you're having a
+			hard time, talking to someone you trust, or a local helpline, can help." The line has no link,
+			number or address, and nothing is sent anywhere.
 		</p>
 		<p>
 			Ask also offers questions you can tap once your log can answer them. The app answers those
@@ -139,17 +148,17 @@
 			If Apple Intelligence is off or unavailable, Meontor shows a thought of its own instead. It
 			does the same if the model times out, errors or writes a line that does not pass the app's
 			checks. The app then keeps a short reason on your device. The reason can quote a few words of
-			the model's line. It stays until it is replaced or you erase your data. Ask keeps no reason
-			and no record of your question. Settings shows whether Apple Intelligence is on.
+			the model's line. It stays until it is replaced or you erase your data. Ask does not save your
+			question and keeps no reason. Settings shows whether Apple Intelligence is on.
 		</p>
 		<p>
 			A set of activities is kept away from the model: everything in the Habits category, such as
 			smoking, alcohol and betting; a set of symptoms, such as headaches; and the starting
 			activities Pain, Stress, Medication and Therapy. An activity you make yourself is kept away
-			too if you put it in Habits. Their names are never among the names Ask gives the model. Both
-			the reading and the yes-or-no check get your question with their names taken out, and the rest
-			of your words stay. For an activity you make yourself, its name is taken out once you have
-			logged it in the past 90 days.
+			too if you put it in Habits. Their names are never among the names Ask gives the model. A
+			question about one of them is turned away before either model reads it. Any other question
+			reaches the model with their names taken out, and the rest of your words stay. For an activity
+			you make yourself, its name is taken out while you have logged it in the past 90 days.
 		</p>
 		<p>
 			These activities are never named in a finding, an answer in Ask, a weekly recap, a finding
