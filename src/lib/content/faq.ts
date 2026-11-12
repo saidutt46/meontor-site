@@ -14,7 +14,7 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: 'What does Meontor need?',
-				a: "An iPhone or iPad running iOS 26 or later. Apple Intelligence is optional. When it is on, it writes the day's thought and one sentence in a finding's details. Without it, Meontor shows lines of its own."
+				a: "An iPhone or iPad running iOS 26 or later. Apple Intelligence is optional. When it is on, it writes the day's thought, and on iOS 27 or later it reads a question you type in Ask. Without it, Meontor shows a thought of its own, and Ask offers questions to tap once your log can answer them."
 			},
 			{ q: 'Is there an account?', a: 'No. There is no sign-in anywhere in the app.' },
 			{
@@ -73,11 +73,11 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'Does the Mentor use AI?',
-				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model writes two small things. One is the day's thought, from the time of day and your tone. The other is one sentence in a finding's details. It comes from your tone, a general line of ours and that finding's own facts. Those facts can name other activities and give sleep and step figures from Apple Health. Nothing is sent to any AI service. Activities in Habits, a set of symptoms, such as headaches, and the starting activities Pain, Stress, Medication and Therapy are kept away from the model. Without Apple Intelligence, Meontor shows lines of its own."
+				a: "Not to find patterns: Meontor does that itself, with fixed rules. With Apple Intelligence on, Apple's on-device model is used in Meontor in a few ways. It writes the day's thought, from the time of day and your tone. And on iOS 27 or later, it reads a question you type in Ask, and answers one more yes-or-no question about it, to see whether you are having a hard time; the app then writes the answer from your log. Nothing is sent to any AI service. Activities in Habits, a set of symptoms, such as headaches, and the starting activities Pain, Stress, Medication and Therapy are kept away from the model. A question that names one of them is usually turned away before either model reads it. A question that passes the app's own checks reaches the model with their names taken out, and the rest of your words stay. For an activity you made yourself, its name is taken out while you have logged it in the past 90 days. Without Apple Intelligence, Meontor shows a thought of its own."
 			},
 			{
-				q: 'What does "Written on device" mean?',
-				a: "It shows under the sentence in a finding's details when Apple's on-device model wrote that sentence. Without it, the sentence is a line of ours. Nothing is sent to any AI service either way."
+				q: 'What can I ask the Mentor?',
+				a: "Once your log can answer them, Ask offers questions to tap, and the Mentor answers them from your log. On iOS 27 or later with Apple Intelligence on, you can also type one, such as when you usually read. Ask can tell you how often, when, how long, which days, or what a day held. Apple's on-device model reads your question, with the names of private activities taken out, and picks what kind it is. The app works out the answer from your log and writes all of it. Your question is not saved, and nothing is sent anywhere. If a question sounds like you are having a hard time, Ask can show a fixed line suggesting someone you trust or a local helpline."
 			},
 			{
 				q: 'Does the Mentor judge my days?',

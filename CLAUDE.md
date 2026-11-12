@@ -17,12 +17,11 @@ Read this file, `README.md` and the prompt you were given (from the owner or a p
 3. After every change: `pnpm check && pnpm lint && pnpm test && pnpm build && pnpm verify`. Show the owner the changed text before committing.
 4. With his approval: commit, `git push -u`, `gh pr create`, `gh pr merge --merge --delete-branch` (merge commits, no squash). Vercel deploys `main` in about a minute; check the live pages with `curl`. Stop any `pnpm preview` you started (`kill $(lsof -ti :4173)`).
 
-**State (2026-11-09):** live at https://meontor-site.vercel.app, which the App Store listing uses for `/privacy` and `/support`. The home page, Terms and README describe the app at `f67dd35` (round 1: Now, capture, widgets, Live Activity, Timeline; a text-only Mentor block). Do not describe the Mentor's rings, a "usual day ring", "Your weeks", Ask, or a model line in a finding's sheet: that work is not settled.
+**State (2026-11-11):** live at https://meontor-site.vercel.app, which the App Store listing uses for `/privacy` and `/support`. The home page, Terms and README describe the app at `f67dd35` (round 1). The privacy page and FAQ describe app v1 at `1ba6ef6`: the finding sheet's model line is gone, and Ask the Mentor anything is described from the code (the model reads a typed question, with private names taken out, into a fixed kind; the app writes every answer; an on-device distress check). The rings may be shown and described as v1 has them (owner, 2026-11-04), in modest words that need not stay true forever; private activities show in grey, never named. Do not describe "Your weeks" (removed).
 
 **Open:**
 
 - Round 2, on the app conductor's "ready": Mentor screenshots and sections (findings, What I know about you, recaps). `now-mentor` and `live-island` images are taken and unused, kept for it.
-- When the app removes the finding sheet's model line, privacy section 3 and the FAQ's AI and "Written on device" answers change with that build.
 - Retake `large` when the app's tile alignment fix (T-124) lands.
 - `HowItLearns`, `LearningDial` and `learningDay.ts` are off the page on purpose (owner, 2026-11-09), kept for when the onboarding chart settles; re-port from `LearningDay.swift` before using them again.
 - Owner calls pending: "No streaks / Nothing resets" beside the Mentor's records.
