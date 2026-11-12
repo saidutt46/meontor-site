@@ -17,12 +17,11 @@ Read this file, `README.md` and the prompt you were given (from the owner or a p
 3. After every change: `pnpm check && pnpm lint && pnpm test && pnpm build && pnpm verify`. Show the owner the changed text before committing.
 4. With his approval: commit, `git push -u`, `gh pr create`, `gh pr merge --merge --delete-branch` (merge commits, no squash). Vercel deploys `main` in about a minute; check the live pages with `curl`. Stop any `pnpm preview` you started (`kill $(lsof -ti :4173)`).
 
-**State (2026-11-11):** live at https://meontor-site.vercel.app, which the App Store listing uses for `/privacy` and `/support`. The home page, Terms and README describe the app at `f67dd35` (round 1). The privacy page and FAQ describe app v1 at `1ba6ef6`: the finding sheet's model line is gone, and Ask the Mentor anything is described from the code (the model reads a typed question, with private names taken out, into a fixed kind; the app writes every answer; an on-device distress check). The rings may be shown and described as v1 has them (owner, 2026-11-04), in modest words that need not stay true forever; private activities show in grey, never named. Do not describe "Your weeks" (removed).
+**State (2026-11-11):** live at https://meontor-site.vercel.app, which the App Store listing uses for `/privacy` and `/support`. The privacy page and FAQ describe app v1 at `1ba6ef6` (Ask the Mentor anything, on-device distress check, private names taken out of the question). The home page describes the app at `f67dd35` (round 1) and, from round 2, the Mentor at v1 (`8ed2f49` screenshots, copy checked at `0eff2a7`). The rings may be described, modestly, as v1 has them (owner, 2026-11-04); private activities show in grey, never named. No rings picture yet. Do not describe "Your weeks" (removed) or a model line in a finding's sheet (removed).
 
 **Open:**
 
-- Round 2, on the app conductor's "ready": Mentor screenshots and sections (findings, What I know about you, recaps). `now-mentor` and `live-island` images are taken and unused, kept for it.
-- Retake `large` when the app's tile alignment fix (T-124) lands.
+- App T-152 (before TestFlight 21) fixes the grey dot on the rings and Walk's "11 of those 11" line; then a rings picture and the Walk finding become options.
 - `HowItLearns`, `LearningDial` and `learningDay.ts` are off the page on purpose (owner, 2026-11-09), kept for when the onboarding chart settles; re-port from `LearningDay.swift` before using them again.
 - Owner calls pending: "No streaks / Nothing resets" beside the Mentor's records.
 - At launch: see "At launch" below. Deferred: HSTS `preload` once the domain settles, `og:image` width and height.
@@ -79,8 +78,8 @@ scripts/
   verify-lib.js (+ .test.js), verify.js   the copy and origin checks
   export-wordmark.swift   SF Pro Rounded Semibold 48pt, tracking -0.6 → SVG outlines
   shots.sh                simulator screenshots via the app's DEBUG launch args
-static/images/screens/    {now,now-mentor,today,mood,capture,timeline}-{light,dark}.webp (780w)
-static/images/widgets/    {large,medium,small,running,live-lock,live-island}-{light,dark}.webp (2x, rounded)
+static/images/screens/    {now,today,mood,capture,timeline}-{light,dark}.webp (780w, app f67dd35); {mentor,mentor-finding,mentor-recap,mentor-ask}-{light,dark}.webp (app 8ed2f49)
+static/images/widgets/    {large,medium,small,running,live-lock}-{light,dark}.webp (2x, rounded; large from 8ed2f49)
 ```
 
 ## Assets
@@ -94,6 +93,7 @@ static/images/widgets/    {large,medium,small,running,live-lock,live-island}-{li
   - `images/og-image.png` (1200 x 630): the export at 280 px, at +140+175, on `#0A0D14`, beside the wordmark and "Moment + Mentor".
   - `images/app-icon.webp` (192 px): the export, for the closing call to action.
 - **Screenshots** (round 1, app `f67dd35`, 2026-11-05): build DEBUG from a `git archive` of the app commit into scratch, with its own DerivedData, in a simulator you create; pass its UDID to every `simctl` call (other projects' simulators are booted, so never `booted`; `scripts/shots.sh` still uses it). Load data with `-skipOnboarding -sampleLife -sampleLifeNoHabits` (no Habits or private activities), then `-screen now -mentorLine none -retireTips all` (`now`), `-mentorLine finding -mentorLineScroll YES` (`now-mentor`), `-todayDay sample -todayScroll YES` (`today`, draws 9:57 pm), `-capture mood`, `-screen search`, `-screen timeline`; `-screen` works with `-sampleLife`. Widgets (Graphite): `-widgets small|medium|large|live`, cropped at 3x (medium 1092x510, small 510x510, large 1092x1146), then down to 2x. Keep the Habits card out of Quick Capture frames. Set the status bar to the time the frame shows. Recipes and checks: the run reports in `.orchestration/runs/` (2026-11-05).
+- **Mentor screenshots** (round 2, app `8ed2f49`, 2026-11-11): same method, with `-skipOnboarding -sampleLifeDays 90 -sampleLifeNoHabits`. Mentor top `-screen mentor`; a finding sheet `-mentorFindingSheet <key prefix>` (`rhythm:` gave Sleep); recap `-mentorOpen recap`; Ask typed `-mentorBottom -askQuestion "<text>"` (the iOS 27 simulator's Apple Intelligence read it, no `-askStub`); Ask chips `-mentorAsk <kind>`; rings `-mentorClock`. Run report: `.orchestration/runs/20261112T025747Z-report.md`.
 
 ## How it learns and the hour colour
 
@@ -101,7 +101,7 @@ static/images/widgets/    {large,medium,small,running,live-lock,live-island}-{li
 - Reduced motion, no JS and screen readers get the still card (the four moments), as the app does under Reduce Motion or VoiceOver.
 - Every mark sits in a `.mark-tint` wrapper; the layout sets `data-phase` on `<html>` from the visitor's hour, and `--phase-*` in `app.css` are Apple's system colours. Without JS the mark stays the midday blue.
 - Every light/dark pair must differ: `for f in static/images/screens/*.webp; do echo "$f $(magick "$f" -colorspace Gray -format '%[fx:mean]' info:)"; done`.
-- `MentorShowcase` is words only until the Mentor settles; its example line is the app's own (`FindingEngine+GoodDays.swift`).
+- `MentorShowcase` is the Mentor section: an intro (with the rings in words) and four rows, Findings, A finding, Recaps and Ask, each with a v1 screenshot. Every line is the app's own wording or proved in the run reports (2026-11-12).
 
 ## At launch
 
