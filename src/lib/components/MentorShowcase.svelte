@@ -36,7 +36,8 @@
 				It notices. It never keeps score.
 			</h2>
 			<p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
-				Everything the Mentor shows comes from your own log, worked out on your device.
+				Everything the Mentor shows comes from your own log, and Apple Health if you allow it,
+				worked out on your device.
 			</p>
 		</div>
 	</section>
@@ -47,7 +48,7 @@
 			and what the days you rated best had in them.
 		</p>
 		<p>
-			Today and your usual day sit side by side, as rings. Private activities show in grey, never
+			Today and your usual day, together in one set of rings. Private activities show in grey, never
 			named.
 		</p>
 		{#snippet media()}
@@ -60,7 +61,7 @@
 		{/snippet}
 	</Feature>
 
-	<Feature eyebrow="What I know about you" title="Each finding, with the days it rests on." flip>
+	<Feature eyebrow="What I know about you" title="Each finding, and how it was worked out." flip>
 		<p>Tap a finding to read more about it.</p>
 		<p>
 			When the Mentor is not sure, it says nothing. Tap the thumbs-down to hide a card you don't
