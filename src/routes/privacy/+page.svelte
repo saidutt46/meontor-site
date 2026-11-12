@@ -6,19 +6,26 @@
   Proprietary and confidential.
 -->
 <!--
-  Every changed sentence here was checked against the app's code at main 7c8baae on 2026-11-03;
-  the rest at f1505c4 (build 20), with the diff between them read. No networking code, CloudKit
-  or third-party package; HealthKit toShare: [] with three read types (HealthReader.swift),
-  90 days on turning a metric on and a 7-day window after (HealthSync.swift historyDays,
-  windowDays; disable() deletes a metric's records; removeRetiredMetrics deletes what older
-  installs kept); the on-device model gets the day phase and tone for a thought
-  (FoundationModelsMentor.swift), and a finding's line and facts for its note
-  (MentorInstructions.findingNotePrompt, FindingNoteWriter.swift, FindingNoteLine.swift), which
-  can hold sleep and step figures; Withheld and SeedCatalog.privateKeys keep Habits, a set of
-  symptoms and four starting activities out. Export: DataExport.swift (Gift is five fixed
-  choices). Erase: StoreReset.swift, PrivacyView.swift (erase(), MentorDiagnostics.clearAll),
-  MentorHeadline.swift (the key), NotificationPreferences.forgetLog. Re-check before changing a
-  claim.
+  Every changed sentence here was checked against the app's code at main 8ed2f49 (v1) on
+  2026-11-11, with the diff from f67dd35 read; the rest at 7c8baae and f1505c4 (build 20). No
+  networking code, CloudKit or third-party package; HealthKit toShare: [] with three read types
+  (HealthReader.swift), 90 days on turning a metric on and a 7-day window after (HealthSync.swift
+  historyDays, windowDays; disable() deletes a metric's records). The on-device model gets the
+  day phase and tone for a thought (FoundationModelsMentor.swift, unchanged). The finding's note
+  is gone (FindingNoteWriter, FindingNoteLine, findingNotePrompt deleted). Ask, iOS 27 with the
+  model available (FoundationModelsAskReader.isAvailable, AskSection.modelReady): the model gets
+  the typed question and the nameable labels and returns a kind, a label and a day from fixed
+  lists (AskReader.swift); Swift screens first (AskReading.before, AskDistress) and writes every
+  line (FindingEngine+Asked.swift, AppCopy+Ask.swift). The distress check gets the question with
+  withheld names put as "something" and answers yes or no (DistressCheck.swift,
+  AskDistress+Withheld.swift); its reply has no link (AppCopy.Mentor.Ask.distressReply). The
+  question is view state, never stored; Ask records no reason (AskResponder.trace logs the
+  reading, never the question). AskVocabulary keeps Withheld and SeedCatalog's private seeds out
+  of the model's list. MentorDiagnostics has the thought channel alone; clearAll also removes the
+  old findingNote key. Export: DataExport.swift (Gift is five fixed choices). Erase:
+  StoreReset.swift, PrivacyView.swift (erase(), MentorDiagnostics.clearAll),
+  NotificationPreferences.forgetLog; Export and Erase unchanged since f67dd35 but for the note
+  cache's removal. Re-check before changing a claim.
 -->
 <script lang="ts">
 	import SeoHead from '$lib/components/SeoHead.svelte';
@@ -36,7 +43,7 @@
 <LegalPage
 	title="Privacy Policy"
 	intro="Meontor is an app for iPhone and iPad for logging your day and seeing the patterns in it. It has no account, no server and no tracking. What you log is stored on your device, and Meontor sends none of it anywhere."
-	effective="November 4, 2026"
+	effective="November 11, 2026"
 >
 	<section>
 		<h2>1. What Meontor keeps, and where</h2>
@@ -57,7 +64,8 @@
 				notification has told you about. Erase everything removes both, as section 8 says.
 			</li>
 			<li>
-				When a line from Apple's on-device model is not used, a short reason why, as section 3 says.
+				When a thought from Apple's on-device model is not used, a short reason why, as section 3
+				says.
 			</li>
 			<li>
 				Which findings you have seen or hidden in the Mentor, with any reason you gave. The Mentor
@@ -98,41 +106,56 @@
 		<h2>3. Apple Intelligence</h2>
 		<p>
 			Meontor finds patterns in your log itself, with fixed rules in the app. It does not use a
-			language model for that. On a device with Apple Intelligence turned on, Apple's on-device
-			model writes two small things. Neither is sent to any AI service.
+			language model for that. On a device with Apple Intelligence turned on, Meontor uses Apple's
+			on-device model for two things. Nothing is sent to any AI service.
 		</p>
 		<ul>
 			<li>
-				The day's thought, on the Now screen and the widget. The model is given the time of day and
-				your chosen tone, and nothing from your log.
+				The day's thought, on the Now screen and the widget. The model writes it. It is given the
+				time of day and your chosen tone, and nothing from your log.
 			</li>
 			<li>
-				One sentence in a finding's details, when you open them. The note says "Written on device"
-				when the model wrote that sentence. The model is given your chosen tone and a general line
-				written by us. It also gets that finding's line and the short facts under it. These facts
-				can name the activity, in your own words if you made it. They can say how often it happens
-				and its usual time and length. They can say when you first logged it and how many times in
-				all. They can name other activities that fall on the same days, such as the days you rated
-				well or a certain weekday. They can also give sleep and step figures from Apple Health. Your
-				notes are not included. The sentence is held in memory and not saved.
+				Ask the Mentor anything, on iOS 27 or later. When you type a question about your log, the
+				model reads it. It is given your question and the names of the activities you have logged.
+				It gives back three things, each picked from a fixed list: what kind of question it is, such
+				as how often or what time, one of those activity names or none, and a day. The app checks
+				that reading against your words, then works out the answer from your log and writes every
+				word of it. The model writes nothing you see. Your question is held in memory while it is
+				read, and is not saved.
 			</li>
 		</ul>
 		<p>
-			If Apple Intelligence is off or unavailable, Meontor shows a line of its own instead. It does
-			the same if the model times out, errors or writes a line that does not pass the app's checks.
-			The app then keeps a short reason on your device. The reason can name an activity or quote a
-			few words of the line. It stays until it is replaced or you erase your data. Settings shows
-			whether Apple Intelligence is on.
+			Ask also looks for signs that the person typing is having a hard time. The app checks the
+			question's words first, and a question it catches never reaches the model. Otherwise the model
+			is asked one more thing about the question, yes or no. Either check can show one fixed line in
+			place of an answer: "Your log can't answer this. If you're having a hard time, talking to
+			someone you trust, or a local helpline, can help." The line has no link, number or address,
+			and nothing is sent anywhere.
+		</p>
+		<p>
+			Ask also offers questions you can tap once your log can answer them. The app answers those
+			from your log without the model. The field for typing a question shows on iOS 27 or later with
+			Apple Intelligence on. If the model is slow or cannot read a question, Ask shows no answer and
+			keeps any questions to tap.
+		</p>
+		<p>
+			If Apple Intelligence is off or unavailable, Meontor shows a thought of its own instead. It
+			does the same if the model times out, errors or writes a line that does not pass the app's
+			checks. The app then keeps a short reason on your device. The reason can quote a few words of
+			the model's line. It stays until it is replaced or you erase your data. Ask keeps no reason
+			and no record of your question. Settings shows whether Apple Intelligence is on.
 		</p>
 		<p>
 			A set of activities is kept away from the model: everything in the Habits category, such as
 			smoking, alcohol and betting; a set of symptoms, such as headaches; and the starting
 			activities Pain, Stress, Medication and Therapy. An activity you make yourself is kept away
-			too if you put it in Habits.
+			too if you put it in Habits. Their names are never among the names Ask gives the model, and
+			the yes-or-no check gets your question with their names taken out.
 		</p>
 		<p>
-			These activities are never named in a finding, a weekly recap, a finding notification or a
-			check-in button, and the widget's line about the last thing you logged leaves them out.
+			These activities are never named in a finding, an answer in Ask, a weekly recap, a finding
+			notification or a check-in button, and the widget's line about the last thing you logged
+			leaves them out.
 		</p>
 		<p>
 			Their names can still show in two ways. Pain, Stress, Medication and Therapy can be suggested
@@ -155,7 +178,7 @@
 		</ul>
 		<p>
 			Sleep and steps show on the Now screen and in your weekly recap, and the Mentor can notice
-			them. Workouts show in the Timeline.
+			them. Ask can answer about your sleep. Workouts show in the Timeline.
 		</p>
 		<p>
 			When you turn a metric on, Meontor reads its last 90 days. After that, it reads the latest
@@ -164,8 +187,8 @@
 		</p>
 		<p>
 			<strong>Meontor never writes to Health.</strong> Meontor never sends Health data anywhere and never
-			uses it for advertising. Exports leave it out. Sleep and step figures can reach Apple's on-device
-			model, as section 3 says. The copy can also be part of your device's backups, as section 8 says.
+			uses it for advertising. Exports leave it out. None of it is given to Apple's on-device model. The
+			copy can also be part of your device's backups, as section 8 says.
 		</p>
 		<p>
 			You can turn a metric off at any time in Meontor's Settings, which also deletes the copy of
@@ -237,7 +260,7 @@
 			<li>The day's thoughts and the app's statistics.</li>
 			<li>The saved copy of the Mentor's latest findings.</li>
 			<li>The record of findings a notification has told you about.</li>
-			<li>The short reasons from section 3.</li>
+			<li>The short reason from section 3.</li>
 			<li>Notifications waiting or already delivered.</li>
 		</ul>
 		<p>
