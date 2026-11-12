@@ -14,7 +14,7 @@ export const FAQ: FaqTopic[] = [
 		items: [
 			{
 				q: 'What does Meontor need?',
-				a: "An iPhone or iPad running iOS 26 or later. Apple Intelligence is optional. When it is on, it writes the day's thought, and on iOS 27 or later it reads a question you type in Ask. Without it, Meontor shows a thought of its own, and Ask offers questions to tap."
+				a: "An iPhone or iPad running iOS 26 or later. Apple Intelligence is optional. When it is on, it writes the day's thought, and on iOS 27 or later it reads a question you type in Ask. Without it, Meontor shows a thought of its own, and Ask offers questions to tap once your log can answer them."
 			},
 			{ q: 'Is there an account?', a: 'No. There is no sign-in anywhere in the app.' },
 			{
@@ -77,7 +77,7 @@ export const FAQ: FaqTopic[] = [
 			},
 			{
 				q: 'What can I ask the Mentor?',
-				a: "Tap a question under Ask, and the Mentor answers it from your log. On iOS 27 or later with Apple Intelligence on, you can also type one, such as when you usually read. Ask can tell you how often, when, how long, which days, or what a day held. Apple's on-device model reads your question and picks what kind it is. The app works out the answer from your log and writes all of it. Your question is not saved, and nothing is sent anywhere. If a question sounds like you are having a hard time, Ask shows a fixed line suggesting someone you trust or a local helpline."
+				a: "Once your log can answer them, Ask offers questions to tap, and the Mentor answers them from your log. On iOS 27 or later with Apple Intelligence on, you can also type one, such as when you usually read. Ask can tell you how often, when, how long, which days, or what a day held. Apple's on-device model reads your question and picks what kind it is. The app works out the answer from your log and writes all of it. Your question is not saved, and nothing is sent anywhere. If a question sounds like you are having a hard time, Ask can show a fixed line suggesting someone you trust or a local helpline."
 			},
 			{
 				q: 'Does the Mentor judge my days?',

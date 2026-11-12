@@ -116,26 +116,27 @@
 			</li>
 			<li>
 				Ask the Mentor anything, on iOS 27 or later. When you type a question about your log, the
-				model reads it. It is given your question as you typed it and the names of the activities
-				you have logged. It gives back three things, each picked from a fixed list: what kind of
-				question it is, such as how often or what time, one of those activity names or none, and a
-				day. The app checks that reading against your words, then works out the answer from your log
-				and writes every word of it. The model writes nothing you see. Your question is held in
-				memory while it is read, and is not saved.
+				model reads it. It is given your question and the names of the activities you have logged.
+				It gives back three things, each picked from a fixed list: what kind of question it is, such
+				as how often or what time, one of those activity names or none, and a day. The app checks
+				that reading against your words, then works out the answer from your log and writes every
+				word of it. The model writes nothing you see. Your question is held in memory while it is
+				read, and is not saved.
 			</li>
 		</ul>
 		<p>
 			Ask also looks for signs that the person typing is having a hard time. The app checks the
 			question's words first, and a question it catches never reaches the model. Otherwise the model
-			is asked one more thing about the question, yes or no. If either check says yes, or the model
-			declines to read the question, Ask shows one fixed line in place of an answer: "Your log can't
-			answer this. If you're having a hard time, talking to someone you trust, or a local helpline,
-			can help." The line has no link, number or address, and nothing is sent anywhere.
+			is asked one more thing about the question, yes or no. Either check can show one fixed line in
+			place of an answer: "Your log can't answer this. If you're having a hard time, talking to
+			someone you trust, or a local helpline, can help." The line has no link, number or address,
+			and nothing is sent anywhere.
 		</p>
 		<p>
-			Ask always offers questions you can tap, which the app answers from your log without the
-			model. The field for typing a question shows on iOS 27 or later with Apple Intelligence on. If
-			the model is slow or cannot read a question, Ask keeps its questions to tap.
+			Ask also offers questions you can tap once your log can answer them. The app answers those
+			from your log without the model. The field for typing a question shows on iOS 27 or later with
+			Apple Intelligence on. If the model is slow or cannot read a question, Ask shows no answer and
+			keeps any questions to tap.
 		</p>
 		<p>
 			If Apple Intelligence is off or unavailable, Meontor shows a thought of its own instead. It
