@@ -39,17 +39,17 @@
 				Everything the Mentor shows comes from your own log, and Apple Health if you allow it,
 				worked out on your device.
 			</p>
+			<p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-label-2 sm:text-xl">
+				Today and your usual day, together in one set of rings. Private activities show in grey,
+				never named.
+			</p>
 		</div>
 	</section>
 
-	<Feature eyebrow="New" title="What your days have in common.">
+	<Feature level="h3" eyebrow="Findings" title="What your days have in common.">
 		<p>
 			As your log grows, the Mentor finds patterns in it: when things usually happen, what is new,
 			and what the days you rated best had in them.
-		</p>
-		<p>
-			Today and your usual day, together in one set of rings. Private activities show in grey, never
-			named.
 		</p>
 		{#snippet media()}
 			<PhoneFrame>
@@ -61,8 +61,8 @@
 		{/snippet}
 	</Feature>
 
-	<Feature eyebrow="What I know about you" title="Each finding, and how it was worked out." flip>
-		<p>Tap a finding to read more about it.</p>
+	<Feature level="h3" eyebrow="A finding" title="Tap one for more about it." flip>
+		<p>The sheet shows more about it, such as when and how often.</p>
 		<p>
 			When the Mentor is not sure, it says nothing. Tap the thumbs-down to hide a card you don't
 			need.
@@ -77,7 +77,7 @@
 		{/snippet}
 	</Feature>
 
-	<Feature eyebrow="Recaps" title="Each week, in a few lines.">
+	<Feature level="h3" eyebrow="Recaps" title="Each week, in a few lines.">
 		<p>
 			On the week's last evening, a short recap: what it held most, what was new, and what was there
 			every day.
@@ -93,11 +93,11 @@
 		{/snippet}
 	</Feature>
 
-	<Feature eyebrow="Ask" title="Questions your log can answer." flip>
+	<Feature level="h3" eyebrow="Ask" title="Questions your log can answer." flip>
 		<p>Once your log can answer them, Ask offers questions to tap.</p>
 		<p>
 			On iOS 27 or later with Apple Intelligence on, you can type one too: how often, when, how
-			long, which days, or what a day held. Every answer is counted from your log.
+			long, which days, or what a day held. Every answer is worked out from your log.
 		</p>
 		{#snippet media()}
 			<PhoneFrame>
